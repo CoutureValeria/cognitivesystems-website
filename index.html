@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognitive Systems – AI Automation for Business Growth</title>
+  <meta name="description" content="We build AI systems that capture, qualify, and book leads for your business 24/7. Get more customers on autopilot." />
+  <link rel="icon" type="image/svg+xml" href="https://cognitivesystems.eu/vite.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#c8c8c8',
+            dark:  '#08090a',
+            panel: '#111113',
+            card:  '#18181a',
+            muted: '#EAEAEA',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #08090a; color: #e0e0e0; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       METALLIC HEADING GRADIENTS
+    ═══════════════════════════════════════════════════════════════ */
+    h2, h3 {
+      background: linear-gradient(108deg, #707070 0%, #f5f5f5 45%, #c0c0c0 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.10));
+    }
+
+    /* h1 shimmer animation */
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    h1 {
+      background: linear-gradient(108deg,
+        #505050 0%, #ffffff 30%, #d8d8d8 45%,
+        #ffffff 60%, #606060 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 7s linear infinite;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.18));
+    }
+
+    .text-gradient {
+      background: linear-gradient(108deg, #aaaaaa 0%, #ffffff 50%, #909090 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       INTERACTIVE DOT-GRID BACKGROUND (Storily.io style)
+    ═══════════════════════════════════════════════════════════════ */
+    .interactive-bg {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Always-on faint base dot layer */
+    .interactive-bg::after {
+      content: '';
+      position: absolute;
+      inset: -20%;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Cursor-revealed bright dot layer via CSS mask */
+    .interactive-bg::before {
+      content: '';
+      position: absolute;
+      inset: -20%;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.22) 1px, transparent 1px);
+      background-size: 28px 28px;
+      -webkit-mask-image: radial-gradient(
+        700px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+        black 0%, transparent 65%
+      );
+      mask-image: radial-gradient(
+        700px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+        black 0%, transparent 65%
+      );
+      opacity: 0;
+      transition: opacity 0.45s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .interactive-bg.bg-active::before { opacity: 1; }
+
+    /* Ensure section content sits above the dot layers */
+    .interactive-bg > * { position: relative; z-index: 1; }
+    .interactive-bg > .absolute { z-index: 0; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════════════════════════ */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #5a5a5a 0%, #d4d4d4 45%, #7a7a7a 100%);
+      color: #050506;
+      font-weight: 800;
+      border-radius: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5),
+                  inset 0 1px 0 rgba(255,255,255,0.4),
+                  inset 0 -1px 0 rgba(0,0,0,0.2);
+    }
+    /* Shimmer sweep */
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 55%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.55s ease;
+      pointer-events: none;
+    }
+    .btn-primary:hover::before { left: 160%; }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #7a7a7a 0%, #ffffff 45%, #aaaaaa 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.6),
+                  inset 0 1px 0 rgba(255,255,255,0.5),
+                  0 0 20px rgba(255,255,255,0.07);
+    }
+
+    .btn-outline {
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid rgba(200,200,200,0.28);
+      color: #d0d0d0;
+      font-weight: 700;
+      border-radius: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.02);
+      transition: all 0.22s ease;
+    }
+    .btn-outline::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 55%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.55s ease;
+      pointer-events: none;
+    }
+    .btn-outline:hover::before { left: 160%; }
+    .btn-outline:hover {
+      background: linear-gradient(135deg, #5a5a5a 0%, #d4d4d4 45%, #7a7a7a 100%);
+      color: #050506;
+      border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.55);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PRODUCT CARDS
+    ═══════════════════════════════════════════════════════════════ */
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: linear-gradient(145deg, #0c0d0e 0%, #111214 100%);
+      border-radius: 18px;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.45);
+    }
+    /* Card shimmer sweep on hover */
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 55%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+      transform: skewX(-15deg);
+      transition: left 0.7s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .product-card:hover::before { left: 160%; }
+    /* Glowing top edge on hover */
+    .product-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .product-card:hover::after { opacity: 1; }
+    .product-card:hover {
+      border-color: rgba(255,255,255,0.16);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.65),
+                  0 0 0 1px rgba(255,255,255,0.06),
+                  0 0 40px rgba(255,255,255,0.02);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       TESTIMONIAL CARDS
+    ═══════════════════════════════════════════════════════════════ */
+    .testi-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0c0d0e, #111214);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 22px rgba(0,0,0,0.38);
+    }
+    .testi-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 20%; right: 20%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .testi-card:hover::after { opacity: 1; }
+    .testi-card:hover {
+      border-color: rgba(255,255,255,0.16);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 44px rgba(0,0,0,0.6),
+                  0 0 0 1px rgba(255,255,255,0.04);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LIVE DEMO CARDS
+    ═══════════════════════════════════════════════════════════════ */
+    .demo-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0c0d0e, #111214);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .demo-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 20%; right: 20%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .demo-card:hover::after { opacity: 1; }
+    .demo-card:hover {
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CALCULATOR RESULT
+    ═══════════════════════════════════════════════════════════════ */
+    #calc-result {
+      background: linear-gradient(145deg, #0c0d0e, #141416);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 14px;
+      box-shadow: 0 0 50px rgba(255,255,255,0.02),
+                  inset 0 1px 0 rgba(255,255,255,0.07);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       EXIT POPUP
+    ═══════════════════════════════════════════════════════════════ */
+    #exit-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+    #exit-popup.active { display: flex; }
+    #exit-popup .popup-panel {
+      background: linear-gradient(145deg, #0e0f10, #161618);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8),
+                  0 0 0 1px rgba(255,255,255,0.05),
+                  inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       MOBILE MENU
+    ═══════════════════════════════════════════════════════════════ */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       VIDEO PLACEHOLDER
+    ═══════════════════════════════════════════════════════════════ */
+    .video-placeholder {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0c0d0e, #111214);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.55);
+    }
+    .video-placeholder::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 15%; right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .video-placeholder:hover::after { opacity: 1; }
+    .video-placeholder:hover {
+      border-color: rgba(255,255,255,0.24);
+      transform: scale(1.015);
+      box-shadow: 0 18px 55px rgba(0,0,0,0.7),
+                  0 0 30px rgba(255,255,255,0.03);
+    }
+    .play-btn {
+      width: 68px;
+      height: 68px;
+      background: linear-gradient(135deg, #484848 0%, #d0d0d0 50%, #606060 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.55),
+                  inset 0 1px 0 rgba(255,255,255,0.35),
+                  inset 0 -1px 0 rgba(0,0,0,0.2);
+    }
+    .video-placeholder:hover .play-btn {
+      transform: scale(1.14);
+      box-shadow: 0 10px 36px rgba(0,0,0,0.65),
+                  0 0 24px rgba(255,255,255,0.12);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ICON WRAPPERS
+    ═══════════════════════════════════════════════════════════════ */
+    .icon-wrap {
+      background: linear-gradient(145deg, #141416, #1a1a1c);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4),
+                  inset 0 1px 0 rgba(255,255,255,0.06);
+      border-radius: 14px;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .product-card:hover .icon-wrap {
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5),
+                  inset 0 1px 0 rgba(255,255,255,0.12),
+                  0 0 16px rgba(255,255,255,0.03);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LABEL BADGES
+    ═══════════════════════════════════════════════════════════════ */
+    .label-badge {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(210,210,210,0.65);
+      border-radius: 999px;
+      padding: 5px 16px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SECTION SEPARATOR
+    ═══════════════════════════════════════════════════════════════ */
+    .section-sep { border-color: rgba(255,255,255,0.055); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       STARS
+    ═══════════════════════════════════════════════════════════════ */
+    .stars { color: #bfa040; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       INPUTS
+    ═══════════════════════════════════════════════════════════════ */
+    .calc-input {
+      background: #08090a;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 8px;
+      color: #e0e0e0;
+      padding: 13px 16px;
+      width: 100%;
+      font-size: 15px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .calc-input:focus {
+      outline: none;
+      border-color: rgba(255,255,255,0.30);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.035);
+    }
+    .calc-input::placeholder { color: rgba(255,255,255,0.25); }
+
+    .email-input {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 8px;
+      color: #e0e0e0;
+      padding: 14px 18px;
+      font-size: 15px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .email-input:focus {
+      outline: none;
+      border-color: rgba(255,255,255,0.30);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.035);
+    }
+    .email-input::placeholder { color: rgba(255,255,255,0.28); }
+
+    /* ═══════════════════════════════════════════════════════════════
+       FADE-IN SCROLL ANIMATION (staggered via delay)
+    ═══════════════════════════════════════════════════════════════ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HEADER GLOW ON SCROLL
+    ═══════════════════════════════════════════════════════════════ */
+    #header.scrolled {
+      background: rgba(8,9,10,0.92) !important;
+      backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.055) !important;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAV LINK HOVER UNDERLINE EFFECT
+    ═══════════════════════════════════════════════════════════════ */
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: linear-gradient(90deg, rgba(200,200,200,0.5), rgba(255,255,255,0.8));
+      transition: width 0.25s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       HERO SOCIAL PROOF BAR
+    ═══════════════════════════════════════════════════════════════ */
+    .proof-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 999px;
+      padding: 6px 16px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       STEP NUMBER CIRCLES
+    ═══════════════════════════════════════════════════════════════ */
+    .step-num {
+      background: linear-gradient(145deg, #141416, #0e0f10);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 2px 14px rgba(0,0,0,0.5),
+                  inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 768px) {
+      .step-line::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: transparent;">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+      <img src="logo.png" alt="Cognitive Systems" style="height:54px; width:auto; filter: invert(1); mix-blend-mode: screen;" />
+      <span class="text-lg font-bold tracking-tight text-white">CognitiveSystems</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#products"     class="text-sm text-muted hover:text-brand transition-colors">Products</a>
+      <a href="#testimonials" class="text-sm text-muted hover:text-brand transition-colors">Results</a>
+      <a href="#demo"         class="text-sm text-muted hover:text-brand transition-colors">Demo</a>
+    </nav>
+
+    <!-- CTA -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#final-cta" class="btn-primary px-5 py-2.5 text-sm">Request Demo</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="hamburger" class="md:hidden text-white p-2" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6"  x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden flex-col bg-panel border-t border-white/5 px-6 py-4 gap-4">
+    <a href="#products"     class="text-sm text-muted py-2 hover:text-brand block" onclick="closeMobileMenu()">Products</a>
+    <a href="#testimonials" class="text-sm text-muted py-2 hover:text-brand block" onclick="closeMobileMenu()">Results</a>
+    <a href="#demo"         class="text-sm text-muted py-2 hover:text-brand block" onclick="closeMobileMenu()">Demo</a>
+    <a href="#final-cta"    class="btn-primary text-center block py-3 text-sm mt-2" onclick="closeMobileMenu()">Request Demo</a>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     HERO SECTION
+============================================================ -->
+<section class="relative min-h-screen flex items-center pt-24 pb-20 interactive-bg" style="background: #08090a;">
+  <!-- Subtle radial glow -->
+  <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(255,255,255,0.06) 0%, transparent 70%);"></div>
+
+  <div class="max-w-6xl mx-auto px-6 w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left: Copy -->
+      <div class="flex flex-col gap-6">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand border border-brand/30 rounded-full px-4 py-1.5 w-fit" style="background: rgba(255,255,255,0.06);">
+          AI Lead Automation
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+          Get More Customers<br/>
+          <span class="text-gradient">on Autopilot</span> with AI
+        </h1>
+
+        <p class="text-lg text-muted/80 leading-relaxed max-w-xl">
+          We build AI systems that capture, qualify, and book leads for your business 24/7  without hiring more staff.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-2">
+          <a href="#final-cta" class="btn-primary px-8 py-4 text-base text-center">
+            Request Demo
+          </a>
+          <a href="#products" class="btn-outline px-8 py-4 text-base text-center">
+            See Our Products
+          </a>
+        </div>
+
+        <!-- Social proof bar -->
+        <div class="proof-bar mt-2">
+          <div class="stars text-sm">★★★★★</div>
+          <span class="text-sm text-muted/60">Trusted by 100+ businesses</span>
+        </div>
+      </div>
+
+      <!-- Right: Video placeholder -->
+      <div class="w-full">
+        <div class="video-placeholder" onclick="document.getElementById('final-cta').scrollIntoView({behavior:'smooth'})">
+          <div class="play-btn">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-muted/60">Watch Demo</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRODUCTS
+============================================================ -->
+<section id="products" class="py-24 border-t section-sep interactive-bg" style="background: #08090a;">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-16 fade-in">
+      <p class="label-badge mb-4">What We Build</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">Our <span class="text-gradient">AI Products</span></h2>
+      <p class="text-muted/60 mt-3 max-w-xl mx-auto text-sm">Plug-and-play systems built specifically to generate and close more revenue.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Card 1: AI Lead Qualification -->
+      <div class="product-card p-8 fade-in">
+        <div class="icon-wrap w-12 h-12 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">AI Lead Qualification</h3>
+        <p class="text-sm text-brand font-medium mb-4">Filter time-wasters. Close faster.</p>
+        <ul class="space-y-3">
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Filters high-quality leads instantly
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Automatically follows up via SMS or email
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Delivers ready-to-buy prospects to your calendar
+          </li>
+        </ul>
+        <a href="#final-cta" class="btn-primary inline-block mt-6 px-6 py-2.5 text-sm">Book a Demo</a>
+      </div>
+
+      <!-- Card 2: AI Lead Reactivation -->
+      <div class="product-card p-8 fade-in" style="transition-delay: 0.05s;">
+        <div class="icon-wrap w-12 h-12 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">AI Lead Reactivation</h3>
+        <p class="text-sm text-brand font-medium mb-4">Turn cold leads into closed deals.</p>
+        <ul class="space-y-3">
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Re-engages old leads automatically
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Sends personalised multi-step follow-up sequences
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Books new opportunities automatically
+          </li>
+        </ul>
+        <a href="#final-cta" class="btn-primary inline-block mt-6 px-6 py-2.5 text-sm">Book a Demo</a>
+      </div>
+
+      <!-- Card 3: AI Receptionist -->
+      <div class="product-card p-8 fade-in" style="transition-delay: 0.1s;">
+        <div class="icon-wrap w-12 h-12 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.5 19.79 19.79 0 0 1 1.06 2.88 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.01.92z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">AI Receptionist</h3>
+        <p class="text-sm text-brand font-medium mb-4">Never miss a call. Never lose a booking.</p>
+        <ul class="space-y-3">
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Answers, qualifies, and books clients 24/7
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Handles hundreds of calls simultaneously
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Reduces or eliminates reception staff costs
+          </li>
+        </ul>
+        <a href="#final-cta" class="btn-primary inline-block mt-6 px-6 py-2.5 text-sm">Book a Demo</a>
+      </div>
+
+      <!-- Card 4: Instagram DM Bot -->
+      <div class="product-card p-8 fade-in" style="transition-delay: 0.15s;">
+        <div class="icon-wrap w-12 h-12 flex items-center justify-center mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Instagram DM Bot</h3>
+        <p class="text-sm text-brand font-medium mb-4">Convert comments into customers while you sleep.</p>
+        <ul class="space-y-3">
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Monitors posts and ads for triggers
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Sends automated DMs and converts engagement to leads
+          </li>
+          <li class="flex gap-3 items-start text-sm text-muted/70">
+            <svg class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Ideal for product launches and campaigns
+          </li>
+        </ul>
+        <a href="#final-cta" class="btn-primary inline-block mt-6 px-6 py-2.5 text-sm">Book a Demo</a>
+      </div>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LIVE AI TEST
+============================================================ -->
+<section id="demo" class="py-24 border-t section-sep" style="background: #0f1011;">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+
+    <div class="fade-in">
+      <p class="label-badge mb-4">Live Demo</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Test Our AI Live</h2>
+      <p class="text-muted/60 text-sm mb-10">Interact with our AI and see how it handles leads in real time.</p>
+    </div>
+
+    <!-- Live demo options -->
+    <div class="fade-in grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+
+      <!-- Call option -->
+      <div class="demo-card p-8 flex flex-col items-center text-center">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background: rgba(255,255,255,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.5 19.79 19.79 0 0 1 1.06 2.88 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.01.92z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Option 1  Call Live</p>
+        <a href="tel:+46108086659" class="text-3xl font-extrabold text-white hover:text-brand transition-colors mb-3 tracking-tight">+46 10-808 66 59</a>
+        <p class="text-sm text-muted/50 leading-relaxed">Call this number and hear our AI answer, qualify, and book a meeting in real time  exactly how it works for your clients.</p>
+      </div>
+
+      <!-- Email option -->
+      <div class="demo-card p-8 flex flex-col items-center text-center">
+        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background: rgba(255,255,255,0.08);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Option 2  Book via Email</p>
+        <p class="text-sm text-muted/50 leading-relaxed mb-5">Enter your email below and our AI will follow up, qualify your request, and book a demo straight into your calendar.</p>
+        <form onsubmit="handleDemoForm(event)" class="w-full flex flex-col gap-3">
+          <input type="email" class="email-input w-full text-center" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary py-3 text-sm w-full">See It Book Live</button>
+        </form>
+        <p id="demo-form-success" class="text-sm text-green-400 hidden mt-3">Our AI will be in touch shortly!</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="testimonials" class="py-24 border-t section-sep interactive-bg" style="background: #08090a;">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-14 fade-in">
+      <p class="label-badge mb-4">Results</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">What Our Clients Say</h2>
+      <div class="flex items-center justify-center gap-2 mt-3">
+        <span class="stars text-sm">★★★★★</span>
+        <span class="text-sm text-muted/50">4.9/5 from 500+ reviews</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="testi-card p-6 fade-in">
+        <div class="stars text-sm mb-3">★★★★★</div>
+        <p class="text-sm text-muted/80 leading-relaxed mb-4">"Saved us 10+ hours per week handling leads. Our team focuses on closing now, not chasing."</p>
+        <div>
+          <p class="text-sm font-semibold text-white">Sarah J.</p>
+          <p class="text-xs text-muted/50">VP of Sales, TechScale SaaS</p>
+        </div>
+      </div>
+
+      <div class="testi-card p-6 fade-in" style="transition-delay: 0.08s;">
+        <div class="stars text-sm mb-3">★★★★★</div>
+        <p class="text-sm text-muted/80 leading-relaxed mb-4">"We went from 30% to 85% lead response rate overnight. The AI never misses a message."</p>
+        <div>
+          <p class="text-sm font-semibold text-white">Marcus R.</p>
+          <p class="text-xs text-muted/50">Founder, GrowthLab Agency</p>
+        </div>
+      </div>
+
+      <div class="testi-card p-6 fade-in" style="transition-delay: 0.16s;">
+        <div class="stars text-sm mb-3">★★★★★</div>
+        <p class="text-sm text-muted/80 leading-relaxed mb-4">"Our calendar went from half-empty to fully booked in two weeks. Incredible ROI."</p>
+        <div>
+          <p class="text-sm font-semibold text-white">Priya K.</p>
+          <p class="text-xs text-muted/50">Director, Apex Consulting</p>
+        </div>
+      </div>
+
+      <div class="testi-card p-6 fade-in" style="transition-delay: 0.04s;">
+        <div class="stars text-sm mb-3">★★★★★</div>
+        <p class="text-sm text-muted/80 leading-relaxed mb-4">"The lead reactivation campaign alone brought in €40K in revenue from leads we'd written off."</p>
+        <div>
+          <p class="text-sm font-semibold text-white">Tom H.</p>
+          <p class="text-xs text-muted/50">CEO, ReviveMedia</p>
+        </div>
+      </div>
+
+      <div class="testi-card p-6 fade-in" style="transition-delay: 0.12s;">
+        <div class="stars text-sm mb-3">★★★★★</div>
+        <p class="text-sm text-muted/80 leading-relaxed mb-4">"We cut our no-show rate by 60%. The automated reminders are a game changer."</p>
+        <div>
+          <p class="text-sm font-semibold text-white">Elena M.</p>
+          <p class="text-xs text-muted/50">Owner, Prestige Clinics</p>
+        </div>
+      </div>
+
+      <div class="testi-card p-6 fade-in" style="transition-delay: 0.2s;">
+        <div class="stars text-sm mb-3">★★★★★</div>
+        <p class="text-sm text-muted/80 leading-relaxed mb-4">"Our Instagram DM bot books 3–5 calls every single day on autopilot. Worth every cent."</p>
+        <div>
+          <p class="text-sm font-semibold text-white">Jake L.</p>
+          <p class="text-xs text-muted/50">CMO, Bold Brand Co.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     REVENUE CALCULATOR
+============================================================ -->
+<section id="calculator" class="py-24 border-t section-sep" style="background: #0f1011;">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-center mb-10 fade-in">
+      <p class="label-badge mb-4">ROI Calculator</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">How Much Revenue Are You Losing?</h2>
+      <p class="text-muted/60 text-sm mt-3">Find out exactly how much is slipping through the cracks every month.</p>
+    </div>
+
+    <div class="fade-in rounded-2xl p-8 md:p-10 border section-sep" style="background: #08090a;">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div>
+          <label class="block text-sm font-semibold text-muted/80 mb-2" for="avgValue">Avg. Booking Value (€)</label>
+          <input class="calc-input" type="number" id="avgValue" value="150" min="0" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-muted/80 mb-2" for="inquiries">Monthly Inquiries / Calls</label>
+          <input class="calc-input" type="number" id="inquiries" value="200" min="0" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-muted/80 mb-2" for="missedRate">Lost / No-Show Rate (%)</label>
+          <input class="calc-input" type="number" id="missedRate" value="20" min="0" max="100" />
+        </div>
+      </div>
+
+      <button onclick="calcRevenue()" class="btn-primary w-full py-4 text-base mb-8">
+        Calculate My Lost Revenue
+      </button>
+
+      <!-- Result -->
+      <div id="calc-result" class="p-6 text-center" style="display:none;">
+        <p class="text-sm text-muted/60 mb-1">You're currently losing approximately</p>
+        <p id="result-value" class="text-5xl font-extrabold mb-1" style="background:linear-gradient(100deg,#aaa 0%,#fff 50%,#ccc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">€0</p>
+        <p class="text-sm text-muted/60">in revenue <span class="font-semibold text-white">every month</span></p>
+        <p class="text-xs text-muted/50 mt-2 mb-5">That's <span id="result-annual" class="font-semibold text-white">€0</span>/year left on the table.</p>
+        <a href="#final-cta" class="btn-primary px-8 py-3 text-sm inline-block">Get AI to Fix This</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section id="final-cta" class="py-28 border-t section-sep interactive-bg" style="background: #08090a;">
+  <div class="max-w-2xl mx-auto px-6 text-center fade-in">
+    <p class="label-badge mb-4">Get Started</p>
+    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+      Get a Free 1-on-1<br/><span class="text-gradient">Consultation</span> for Your Business
+    </h2>
+    <p class="text-muted/60 text-base mb-10 max-w-lg mx-auto">
+      See exactly how AI can generate and qualify leads for your business  personalised to your industry.
+    </p>
+
+    <!-- Email capture OR calendar embed -->
+    <form id="cta-form" onsubmit="handleCTAForm(event)" class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+      <input type="email" class="email-input flex-1 max-w-sm" placeholder="Enter your work email" required />
+      <button type="submit" class="btn-primary px-8 py-4 text-base whitespace-nowrap">Book Demo</button>
+    </form>
+    <p id="cta-success" class="text-sm text-green-400 hidden">Thanks! We'll reach out within 24 hours.</p>
+
+    <p class="text-xs text-muted/40">No spam. No commitment. Just results.</p>
+
+    <!-- Calendar embed area -->
+    <div class="mt-12 rounded-2xl overflow-hidden border section-sep" style="background: #0f1011; min-height: 480px;">
+      <iframe
+        src="https://www.cal.eu/cognitvesystems/15min?overlayCalendar=true"
+        frameborder="0"
+        title="Book a Demo"
+        allowfullscreen
+        style="width: 100%; min-height: 700px; border: none; display: block;"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="border-t section-sep pt-14 pb-8" style="background: #08090a;">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2.5 mb-3">
+          <img src="logo.png" alt="Cognitive Systems" style="height:32px; width:auto; filter: invert(1); mix-blend-mode: screen;" />
+          <span class="text-lg font-bold text-white">CognitiveSystems</span>
+        </div>
+        <p class="text-sm text-muted/50 leading-relaxed mb-5">AI automation that generates leads, books calls, and grows your business 24/7.</p>
+        <div class="flex gap-4">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/kasper-b%C3%A4ckman-681212218" target="_blank" rel="noopener noreferrer" class="text-muted/40 hover:text-brand transition-colors" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/cognitivesystemsab/" target="_blank" rel="noopener noreferrer" class="text-muted/40 hover:text-brand transition-colors" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="#" class="text-muted/40 hover:text-brand transition-colors" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted/40 mb-4">Company</p>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm text-muted/60 hover:text-brand transition-colors">About Us</a></li>
+          <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Contact</a></li>
+          <li><a href="privacy.html" class="text-sm text-muted/60 hover:text-brand transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Solutions -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted/40 mb-4">Solutions</p>
+        <ul class="space-y-3">
+          <li><a href="#products" class="text-sm text-muted/60 hover:text-brand transition-colors">AI Lead Qualification</a></li>
+          <li><a href="#products" class="text-sm text-muted/60 hover:text-brand transition-colors">AI Lead Reactivation</a></li>
+          <li><a href="#products" class="text-sm text-muted/60 hover:text-brand transition-colors">AI Receptionist</a></li>
+          <li><a href="#products" class="text-sm text-muted/60 hover:text-brand transition-colors">Instagram DM Bot</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t section-sep pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
+      <p class="text-xs text-muted/30">© 2026 Cognitive Systems. All Rights Reserved.</p>
+      <p class="text-xs text-muted/30">Designed for Growth.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     EXIT INTENT POPUP
+============================================================ -->
+<div id="exit-popup" role="dialog" aria-modal="true" aria-label="Exit popup">
+  <div class="popup-panel relative p-8 max-w-md w-full mx-4">
+    <!-- Close button -->
+    <button onclick="closePopup()" class="absolute top-4 right-4 text-muted/40 hover:text-white transition-colors" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5" style="background: rgba(255,255,255,0.08);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(210,210,210,0.85)" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-2">Wait  Want a Free AI Demo?</h3>
+      <p class="text-sm text-muted/60 mb-6">See how AI can generate and qualify leads for your business  completely free, no commitment.</p>
+
+      <form onsubmit="handlePopupForm(event)" class="flex flex-col gap-3">
+        <input type="email" class="email-input w-full" placeholder="Enter your email" required />
+        <button type="submit" class="btn-primary w-full py-3.5 text-base">Yes, show me</button>
+      </form>
+      <p id="popup-success" class="text-sm text-green-400 hidden mt-3">We'll be in touch soon!</p>
+      <button onclick="closePopup()" class="mt-3 text-xs text-muted/40 hover:text-muted/60 transition-colors">No thanks, I'll pass</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  // HEADER — glass on scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // MOBILE MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  // INTERACTIVE DOT-GRID BACKGROUND (Storily.io style)
+  document.querySelectorAll('.interactive-bg').forEach(section => {
+    let rafId = null;
+    let targetX = -500, targetY = -500;
+    let currentX = -500, currentY = -500;
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function animate() {
+      currentX = lerp(currentX, targetX, 0.1);
+      currentY = lerp(currentY, targetY, 0.1);
+      section.style.setProperty('--mouse-x', currentX + 'px');
+      section.style.setProperty('--mouse-y', currentY + 'px');
+      rafId = requestAnimationFrame(animate);
+    }
+    section.addEventListener('mouseenter', () => {
+      section.classList.add('bg-active');
+      animate();
+    });
+    section.addEventListener('mousemove', e => {
+      const r = section.getBoundingClientRect();
+      targetX = e.clientX - r.left + section.offsetWidth  * 0.2;
+      targetY = e.clientY - r.top  + section.offsetHeight * 0.2;
+    }, { passive: true });
+    section.addEventListener('mouseleave', () => {
+      section.classList.remove('bg-active');
+      cancelAnimationFrame(rafId);
+      targetX = -500; targetY = -500;
+    });
+  });
+
+  // FADE-IN ON SCROLL (staggered siblings)
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const siblings = [...entry.target.parentElement.children]
+          .filter(el => el.classList.contains('fade-in') && !el.classList.contains('visible'));
+        let delay = 0;
+        siblings.forEach(sib => { sib.style.transitionDelay = delay + 'ms'; delay += 90; });
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // REVENUE CALCULATOR
+  function calcRevenue() {
+    const avg      = parseFloat(document.getElementById('avgValue').value)   || 0;
+    const monthly  = parseFloat(document.getElementById('inquiries').value)  || 0;
+    const lostRate = parseFloat(document.getElementById('missedRate').value) || 0;
+    const monthlyLost = avg * monthly * (lostRate / 100);
+    const annualLost  = monthlyLost * 12;
+    const fmt = n => '€' + Math.round(n).toLocaleString('de-DE');
+    document.getElementById('result-value').textContent  = fmt(monthlyLost);
+    document.getElementById('result-annual').textContent = fmt(annualLost);
+    const result = document.getElementById('calc-result');
+    result.style.display = 'block';
+    result.style.opacity = '0';
+    result.style.transform = 'translateY(12px)';
+    requestAnimationFrame(() => {
+      result.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      result.style.opacity = '1';
+      result.style.transform = 'none';
+    });
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  ['avgValue','inquiries','missedRate'].forEach(id => {
+    document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') calcRevenue(); });
+  });
+
+  // CTA FORMS
+  function handleCTAForm(e) {
+    e.preventDefault();
+    document.getElementById('cta-form').style.display = 'none';
+    document.getElementById('cta-success').classList.remove('hidden');
+  }
+  function handleDemoForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      e.target.style.display = 'none';
+      document.getElementById('demo-form-success').classList.remove('hidden');
+    }, 800);
+  }
+
+  // EXIT INTENT POPUP
+  let popupShown = false;
+  function showPopup() {
+    if (!popupShown) { document.getElementById('exit-popup').classList.add('active'); popupShown = true; }
+  }
+  function closePopup() { document.getElementById('exit-popup').classList.remove('active'); }
+  function handlePopupForm(e) {
+    e.preventDefault();
+    document.getElementById('popup-success').classList.remove('hidden');
+    setTimeout(closePopup, 2000);
+  }
+  document.addEventListener('mouseleave', e => { if (e.clientY <= 0) showPopup(); });
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') showPopup(); });
+  setTimeout(showPopup, 45000);
+  document.getElementById('exit-popup').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closePopup();
+  });
+</script>
+
+</body>
+</html>
