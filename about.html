@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us – Cognitive Systems</title>
-  <meta name="description" content="Learn about Cognitive Systems — who we are, what we do, and why we build AI automation for businesses." />
+  <title>About Us – Drivverk AB</title>
+  <meta name="description" content="Learn about Drivverk AB — who we are, what we do, and why we build AI automation for businesses." />
   <link rel="icon" type="image/svg+xml" href="https://cognitivesystems.eu/vite.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -12,11 +12,12 @@
       theme: {
         extend: {
           colors: {
-            brand: '#3A76E6',
-            dark:  '#0C0D0D',
-            panel: '#1A1A1C',
-            card:  '#242426',
-            muted: '#EAEAEA',
+            brand:   '#2563eb',
+            dark:    '#ffffff',
+            panel:   '#f8fafc',
+            card:    '#ffffff',
+            muted:   '#475569',
+            heading: '#0f172a',
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
         },
@@ -28,38 +29,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #0C0D0D; color: #fff; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: #475569; }
+    h1, h2, h3 { color: #0f172a; background: none; -webkit-text-fill-color: #0f172a; }
     .text-gradient {
-      background: linear-gradient(135deg, #3A76E6 0%, #60a5fa 100%);
+      background: linear-gradient(120deg, #2563eb 0%, #60a5fa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .btn-primary {
-      background: #3A76E6; color: #fff; font-weight: 600; border-radius: 8px;
+      background: #2563eb; color: #fff; font-weight: 700; border-radius: 8px;
       transition: all 0.2s ease;
     }
-    .btn-primary:hover { background: #2b5ebc; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(58,118,230,0.35); }
-    .section-sep { border-color: rgba(255,255,255,0.06); }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.35); }
+    .section-sep { border-color: #e2e8f0; }
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
     .value-card {
-      background: #1A1A1C;
-      border: 1px solid rgba(255,255,255,0.07);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 16px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
-    .value-card:hover { border-color: rgba(58,118,230,0.35); }
+    .value-card:hover { border-color: #93c5fd; box-shadow: 0 6px 20px rgba(37,99,235,0.08); }
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: rgba(12,13,13,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06);">
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0;">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-      <img src="logo.png" alt="Cognitive Systems" style="height:36px; width:auto; filter: invert(1); mix-blend-mode: screen;" />
-      <span class="text-lg font-bold tracking-tight text-white">CognitiveSystems</span>
+      <img src="logo.png" alt="Drivverk AB" style="height:36px; width:auto;" />
+      <span class="text-lg font-bold tracking-tight text-heading">Drivverk AB</span>
     </a>
     <nav class="hidden md:flex items-center gap-8">
       <a href="index.html#products"     class="text-sm text-muted hover:text-brand transition-colors">Products</a>
@@ -71,101 +74,101 @@
 </header>
 
 <!-- HERO -->
-<section class="pt-36 pb-20 px-6 text-center" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(58,118,230,0.09) 0%, transparent 70%);">
+<section class="pt-36 pb-20 px-6 text-center" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(37,99,235,0.06) 0%, transparent 70%);">
   <div class="max-w-3xl mx-auto fade-in">
     <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-4">Who We Are</p>
-    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
       We Build AI That<br/><span class="text-gradient">Grows Your Business</span>
     </h1>
-    <p class="text-lg text-muted/60 leading-relaxed max-w-2xl mx-auto">
-      Cognitive Systems is an AI automation agency helping businesses capture more leads, respond faster, and book more clients — all without hiring extra staff.
+    <p class="text-lg text-muted/80 leading-relaxed max-w-2xl mx-auto">
+      Drivverk AB is an AI automation agency helping businesses capture more leads, respond faster, and book more clients — all without hiring extra staff.
     </p>
   </div>
 </section>
 
 <!-- MISSION -->
-<section class="py-20 border-t section-sep" style="background: #1A1A1C;">
+<section class="py-20 border-t section-sep" style="background: #f8fafc;">
   <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     <div class="fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">Our Mission</p>
-      <h2 class="text-3xl font-bold text-white mb-4">Automation that actually converts</h2>
-      <p class="text-muted/60 leading-relaxed mb-4">
-        Most businesses lose leads simply because they can't respond fast enough. We built Cognitive Systems to fix that — using AI that works around the clock so you never miss an opportunity.
+      <h2 class="text-3xl font-bold mb-4">Automation that actually converts</h2>
+      <p class="text-muted/80 leading-relaxed mb-4">
+        Most businesses lose leads simply because they can't respond fast enough. We built Drivverk AB to fix that — using AI that works around the clock so you never miss an opportunity.
       </p>
-      <p class="text-muted/60 leading-relaxed">
+      <p class="text-muted/80 leading-relaxed">
         We don't just automate processes. We design intelligent systems tailored to your business that qualify leads, follow up instantly, and fill your calendar with real, ready-to-buy clients.
       </p>
     </div>
     <div class="fade-in grid grid-cols-2 gap-4" style="transition-delay:0.1s;">
-      <div class="rounded-2xl p-6 text-center" style="background:#0C0D0D; border:1px solid rgba(58,118,230,0.2);">
+      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
         <p class="text-4xl font-extrabold text-brand mb-1">100+</p>
-        <p class="text-sm text-muted/50">Businesses automated</p>
+        <p class="text-sm text-muted/60">Businesses automated</p>
       </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#0C0D0D; border:1px solid rgba(58,118,230,0.2);">
+      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
         <p class="text-4xl font-extrabold text-brand mb-1">24/7</p>
-        <p class="text-sm text-muted/50">AI uptime, always on</p>
+        <p class="text-sm text-muted/60">AI uptime, always on</p>
       </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#0C0D0D; border:1px solid rgba(58,118,230,0.2);">
+      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
         <p class="text-4xl font-extrabold text-brand mb-1">85%</p>
-        <p class="text-sm text-muted/50">Avg. lead response rate</p>
+        <p class="text-sm text-muted/60">Avg. lead response rate</p>
       </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#0C0D0D; border:1px solid rgba(58,118,230,0.2);">
+      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
         <p class="text-4xl font-extrabold text-brand mb-1">60%</p>
-        <p class="text-sm text-muted/50">Reduction in no-shows</p>
+        <p class="text-sm text-muted/60">Reduction in no-shows</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- VALUES -->
-<section class="py-20 border-t section-sep" style="background: #0C0D0D;">
+<section class="py-20 border-t section-sep" style="background: #ffffff;">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">What Drives Us</p>
-      <h2 class="text-3xl font-bold text-white">Our Values</h2>
+      <h2 class="text-3xl font-bold">Our Values</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="value-card p-7 fade-in">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(58,118,230,0.12);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3A76E6" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <h3 class="text-lg font-bold text-white mb-2">Speed</h3>
-        <p class="text-sm text-muted/55 leading-relaxed">The first business to respond wins the lead. Our AI responds in seconds, not hours.</p>
+        <h3 class="text-lg font-bold mb-2">Speed</h3>
+        <p class="text-sm text-muted/70 leading-relaxed">The first business to respond wins the lead. Our AI responds in seconds, not hours.</p>
       </div>
       <div class="value-card p-7 fade-in" style="transition-delay:0.08s;">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(58,118,230,0.12);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3A76E6" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3 class="text-lg font-bold text-white mb-2">Reliability</h3>
-        <p class="text-sm text-muted/55 leading-relaxed">Our systems run 24/7 with zero downtime. Your business never sleeps, and neither does our AI.</p>
+        <h3 class="text-lg font-bold mb-2">Reliability</h3>
+        <p class="text-sm text-muted/70 leading-relaxed">Our systems run 24/7 with zero downtime. Your business never sleeps, and neither does our AI.</p>
       </div>
       <div class="value-card p-7 fade-in" style="transition-delay:0.16s;">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(58,118,230,0.12);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3A76E6" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
-        <h3 class="text-lg font-bold text-white mb-2">Results</h3>
-        <p class="text-sm text-muted/55 leading-relaxed">We measure success in booked calls and closed revenue — not vanity metrics.</p>
+        <h3 class="text-lg font-bold mb-2">Results</h3>
+        <p class="text-sm text-muted/70 leading-relaxed">We measure success in booked calls and closed revenue — not vanity metrics.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TEAM -->
-<section class="py-20 border-t section-sep" style="background: #1A1A1C;">
+<section class="py-20 border-t section-sep" style="background: #f8fafc;">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">The Team</p>
-      <h2 class="text-3xl font-bold text-white">Built by People Who Care About Your Growth</h2>
-      <p class="text-muted/50 text-sm mt-3 max-w-xl mx-auto">We're a focused team of AI engineers, automation specialists, and growth strategists dedicated to one thing: getting you more customers.</p>
+      <h2 class="text-3xl font-bold">Built by People Who Care About Your Growth</h2>
+      <p class="text-muted/60 text-sm mt-3 max-w-xl mx-auto">We're a focused team of AI engineers, automation specialists, and growth strategists dedicated to one thing: getting you more customers.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="value-card p-7 flex items-start gap-5 fade-in">
-        <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold text-brand" style="background:rgba(58,118,230,0.12);">K</div>
+        <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold text-brand" style="background:#eff6ff;">K</div>
         <div>
-          <p class="font-bold text-white">Kasper Bäckman</p>
+          <p class="font-bold text-heading">Kasper Bäckman</p>
           <p class="text-xs text-brand mb-2">CEO & Co-Founder · Uppsala, Sweden</p>
-          <p class="text-sm text-muted/55 leading-relaxed">Based in Uppsala, Sweden. Building AI systems that help businesses capture more leads and book more clients on autopilot.</p>
+          <p class="text-sm text-muted/70 leading-relaxed">Based in Uppsala, Sweden. Building AI systems that help businesses capture more leads and book more clients on autopilot.</p>
         </div>
       </div>
     </div>
@@ -173,27 +176,27 @@
 </section>
 
 <!-- CTA -->
-<section class="py-24 border-t section-sep text-center px-6" style="background: #0C0D0D;">
+<section class="py-24 border-t section-sep text-center px-6" style="background: #ffffff;">
   <div class="max-w-xl mx-auto fade-in">
-    <h2 class="text-3xl font-bold text-white mb-4">Ready to Work With Us?</h2>
-    <p class="text-muted/60 text-sm mb-8">Book a free consultation and see exactly how we'd build an AI system for your business.</p>
+    <h2 class="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+    <p class="text-muted/70 text-sm mb-8">Book a free consultation and see exactly how we'd build an AI system for your business.</p>
     <a href="index.html#final-cta" class="btn-primary px-10 py-4 text-base inline-block">Book Free Consultation</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="border-t section-sep pt-8 pb-6 text-center" style="background: #0C0D0D;">
+<footer class="border-t section-sep pt-8 pb-6 text-center" style="background: #f8fafc;">
   <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
     <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-      <img src="logo.png" alt="Cognitive Systems" style="height:26px; width:auto; filter: invert(1); mix-blend-mode: screen;" />
-      <span class="text-sm font-bold text-white">CognitiveSystems</span>
+      <img src="logo.png" alt="Drivverk AB" style="height:26px; width:auto;" />
+      <span class="text-sm font-bold text-heading">Drivverk AB</span>
     </a>
     <div class="flex gap-6">
-      <a href="about.html"   class="text-xs text-muted/40 hover:text-brand transition-colors">About Us</a>
-      <a href="privacy.html" class="text-xs text-muted/40 hover:text-brand transition-colors">Privacy Policy</a>
-      <a href="index.html#final-cta" class="text-xs text-muted/40 hover:text-brand transition-colors">Contact</a>
+      <a href="about.html"   class="text-xs text-muted/50 hover:text-brand transition-colors">About Us</a>
+      <a href="privacy.html" class="text-xs text-muted/50 hover:text-brand transition-colors">Privacy Policy</a>
+      <a href="index.html#final-cta" class="text-xs text-muted/50 hover:text-brand transition-colors">Contact</a>
     </div>
-    <p class="text-xs text-muted/30">© 2026 Cognitive Systems. All Rights Reserved.</p>
+    <p class="text-xs text-muted/40">© 2026 Drivverk AB. All Rights Reserved.</p>
   </div>
 </footer>
 
