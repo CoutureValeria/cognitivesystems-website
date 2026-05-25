@@ -12,12 +12,12 @@
       theme: {
         extend: {
           colors: {
-            brand:   '#2563eb',
-            dark:    '#ffffff',
-            panel:   '#f8fafc',
+            brand:   '#1a1a1a',
+            dark:    '#1a1a1a',
+            panel:   '#f5f4f0',
             card:    '#ffffff',
-            muted:   '#475569',
-            heading: '#0f172a',
+            muted:   '#3a3a3a',
+            heading: '#1a1a1a',
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
         },
@@ -29,36 +29,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #ffffff; color: #475569; }
-    h1, h2, h3 { color: #0f172a; background: none; -webkit-text-fill-color: #0f172a; }
-    .text-gradient {
-      background: linear-gradient(120deg, #2563eb 0%, #60a5fa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .btn-primary {
-      background: #2563eb; color: #fff; font-weight: 700; border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.35); }
-    .section-sep { border-color: #e2e8f0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f5f4f0; color: #3a3a3a; line-height: 1.75; }
+    h1, h2, h3 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; font-weight: 700; }
+    .text-gradient { color: #1a1a1a; -webkit-text-fill-color: #1a1a1a; background: none; }
+    .btn-primary { background: #1a1a1a; color: #fff; font-weight: 700; border-radius: 8px; transition: background 0.2s ease; }
+    .btn-primary:hover { background: #333333; }
+    .section-sep { border-color: #e8e6e0; }
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
     .value-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px;
+      transition: border-color 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
-    .value-card:hover { border-color: #93c5fd; box-shadow: 0 6px 20px rgba(37,99,235,0.08); }
+    .value-card:hover { border-color: #c8c6c0; }
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0;">
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: rgba(245,244,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid #e8e6e0;">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
       <img src="logo.png" alt="Drivverk AB" style="height:36px; width:auto;" />
@@ -74,7 +63,7 @@
 </header>
 
 <!-- HERO -->
-<section class="pt-36 pb-20 px-6 text-center" style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(37,99,235,0.06) 0%, transparent 70%);">
+<section class="pt-36 pb-20 px-6 text-center" style="background: #f5f4f0;">
   <div class="max-w-3xl mx-auto fade-in">
     <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-4">Who We Are</p>
     <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
@@ -87,7 +76,7 @@
 </section>
 
 <!-- MISSION -->
-<section class="py-20 border-t section-sep" style="background: #f8fafc;">
+<section class="py-20 border-t section-sep" style="background: #f5f4f0;">
   <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     <div class="fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">Our Mission</p>
@@ -100,19 +89,19 @@
       </p>
     </div>
     <div class="fade-in grid grid-cols-2 gap-4" style="transition-delay:0.1s;">
-      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
+      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
         <p class="text-4xl font-extrabold text-brand mb-1">100+</p>
         <p class="text-sm text-muted/60">Businesses automated</p>
       </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
+      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
         <p class="text-4xl font-extrabold text-brand mb-1">24/7</p>
         <p class="text-sm text-muted/60">AI uptime, always on</p>
       </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
+      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
         <p class="text-4xl font-extrabold text-brand mb-1">85%</p>
         <p class="text-sm text-muted/60">Avg. lead response rate</p>
       </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#eff6ff; border:1px solid #bfdbfe;">
+      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
         <p class="text-4xl font-extrabold text-brand mb-1">60%</p>
         <p class="text-sm text-muted/60">Reduction in no-shows</p>
       </div>
@@ -121,7 +110,7 @@
 </section>
 
 <!-- VALUES -->
-<section class="py-20 border-t section-sep" style="background: #ffffff;">
+<section class="py-20 border-t section-sep" style="background: #f5f4f0;">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">What Drives Us</p>
@@ -130,21 +119,21 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="value-card p-7 fade-in">
         <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <h3 class="text-lg font-bold mb-2">Speed</h3>
         <p class="text-sm text-muted/70 leading-relaxed">The first business to respond wins the lead. Our AI responds in seconds, not hours.</p>
       </div>
       <div class="value-card p-7 fade-in" style="transition-delay:0.08s;">
         <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h3 class="text-lg font-bold mb-2">Reliability</h3>
         <p class="text-sm text-muted/70 leading-relaxed">Our systems run 24/7 with zero downtime. Your business never sleeps, and neither does our AI.</p>
       </div>
       <div class="value-card p-7 fade-in" style="transition-delay:0.16s;">
         <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <h3 class="text-lg font-bold mb-2">Results</h3>
         <p class="text-sm text-muted/70 leading-relaxed">We measure success in booked calls and closed revenue — not vanity metrics.</p>
@@ -154,7 +143,7 @@
 </section>
 
 <!-- TEAM -->
-<section class="py-20 border-t section-sep" style="background: #f8fafc;">
+<section class="py-20 border-t section-sep" style="background: #f5f4f0;">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-14 fade-in">
       <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">The Team</p>
@@ -164,7 +153,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="value-card p-7 flex items-start gap-5 fade-in">
-        <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold text-brand" style="background:#eff6ff;">K</div>
+        <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold text-brand" style="background:#e8e6e0;">K</div>
         <div>
           <p class="font-bold text-heading">Kasper Bäckman</p>
           <p class="text-xs text-brand mb-2">CEO & Co-Founder · Uppsala, Sweden</p>
@@ -176,7 +165,7 @@
 </section>
 
 <!-- CTA -->
-<section class="py-24 border-t section-sep text-center px-6" style="background: #ffffff;">
+<section class="py-24 border-t section-sep text-center px-6" style="background: #f5f4f0;">
   <div class="max-w-xl mx-auto fade-in">
     <h2 class="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
     <p class="text-muted/70 text-sm mb-8">Book a free consultation and see exactly how we'd build an AI system for your business.</p>
@@ -185,7 +174,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="border-t section-sep pt-8 pb-6 text-center" style="background: #f8fafc;">
+<footer class="border-t section-sep pt-8 pb-6 text-center" style="background: #f5f4f0;">
   <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
     <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
       <img src="logo.png" alt="Drivverk AB" style="height:26px; width:auto;" />
