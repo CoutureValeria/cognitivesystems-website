@@ -1,202 +1,202 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us – Drivverk AB</title>
-  <meta name="description" content="Learn about Drivverk AB — who we are, what we do, and why we build AI automation for businesses." />
-  <link rel="icon" type="image/svg+xml" href="https://cognitivesystems.eu/vite.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand:   '#1a1a1a',
-            dark:    '#1a1a1a',
-            panel:   '#f5f4f0',
-            card:    '#ffffff',
-            muted:   '#3a3a3a',
-            heading: '#1a1a1a',
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #f5f4f0; color: #3a3a3a; line-height: 1.75; }
-    h1, h2, h3 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; font-weight: 700; }
-    .text-gradient { color: #1a1a1a; -webkit-text-fill-color: #1a1a1a; background: none; }
-    .btn-primary { background: #1a1a1a; color: #fff; font-weight: 700; border-radius: 8px; transition: background 0.2s ease; }
-    .btn-primary:hover { background: #333333; }
-    .section-sep { border-color: #e8e6e0; }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-    .value-card {
-      background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px;
-      transition: border-color 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    }
-    .value-card:hover { border-color: #c8c6c0; }
-  </style>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>About Us – Drivverk AB</title>
+ <meta name="description" content="Learn about Drivverk AB who we are, what we do, and why we build automation for businesses." />
+ <link rel="icon" type="image/svg+xml" href="https://cognitivesystems.eu/vite.svg" />
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ brand: '#1a1a1a',
+ dark: '#1a1a1a',
+ panel: '#f5f4f0',
+ card: '#ffffff',
+ muted: '#3a3a3a',
+ heading: '#1a1a1a',
+ },
+ fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+ },
+ },
+ };
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+ <style>
+ html { scroll-behavior: smooth; }
+ body { font-family: 'Inter', system-ui, sans-serif; background: #f5f4f0; color: #3a3a3a; line-height: 1.75; }
+ h1, h2, h3 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; font-weight: 700; }
+.text-gradient { color: #1a1a1a; -webkit-text-fill-color: #1a1a1a; background: none; }
+.btn-primary { background: #1a1a1a; color: #fff; font-weight: 700; border-radius: 8px; transition: background 0.2s ease; }
+.btn-primary:hover { background: #333333; }
+.section-sep { border-color: #e8e6e0; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+.value-card {
+ background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px;
+ transition: border-color 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+ }
+.value-card:hover { border-color: #c8c6c0; }
+ </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: rgba(245,244,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid #e8e6e0;">
-  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-      <img src="logo.png" alt="Drivverk AB" style="height:36px; width:auto; mix-blend-mode: multiply;" />
-      <span class="text-lg font-bold tracking-tight text-heading">Drivverk AB</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8">
-      <a href="index.html#products"     class="text-sm text-muted hover:text-brand transition-colors">Products</a>
-      <a href="index.html#testimonials" class="text-sm text-muted hover:text-brand transition-colors">Results</a>
-      <a href="index.html#demo"         class="text-sm text-muted hover:text-brand transition-colors">Demo</a>
-    </nav>
-    <a href="index.html#final-cta" class="btn-primary px-5 py-2.5 text-sm hidden md:inline-block">Request Demo</a>
-  </div>
+ <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+ <a href="index.html" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+ <img src="logo.png" alt="Drivverk AB" style="height:36px; width:auto; mix-blend-mode: multiply;" />
+ <span class="text-lg font-bold tracking-tight text-heading">Drivverk AB</span>
+ </a>
+ <nav class="hidden md:flex items-center gap-8">
+ <a href="index.html#products" class="text-sm text-muted hover:text-brand transition-colors">Products</a>
+ <a href="index.html#testimonials" class="text-sm text-muted hover:text-brand transition-colors">Results</a>
+ <a href="index.html#demo" class="text-sm text-muted hover:text-brand transition-colors">Demo</a>
+ </nav>
+ <a href="index.html#final-cta" class="btn-primary px-5 py-2.5 text-sm hidden md:inline-block">Request Demo</a>
+ </div>
 </header>
 
 <!-- HERO -->
 <section class="pt-36 pb-20 px-6 text-center" style="background: #f5f4f0;">
-  <div class="max-w-3xl mx-auto fade-in">
-    <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-4">Who We Are</p>
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-      We Build AI That<br/><span class="text-gradient">Grows Your Business</span>
-    </h1>
-    <p class="text-lg text-muted/80 leading-relaxed max-w-2xl mx-auto">
-      Drivverk AB is an AI automation agency helping businesses capture more leads, respond faster, and book more clients — all without hiring extra staff.
-    </p>
-  </div>
+ <div class="max-w-3xl mx-auto fade-in">
+ <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-4">Who We Are</p>
+ <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+ We Build What<br/><span class="text-gradient">Grows Your Business</span>
+ </h1>
+ <p class="text-lg text-muted/80 leading-relaxed max-w-2xl mx-auto">
+ Drivverk AB is an automation agency helping businesses capture more leads, respond faster, and book more clients — without hiring extra staff.
+ </p>
+ </div>
 </section>
 
 <!-- MISSION -->
 <section class="py-20 border-t section-sep" style="background: #f5f4f0;">
-  <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <div class="fade-in">
-      <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">Our Mission</p>
-      <h2 class="text-3xl font-bold mb-4">Automation that actually converts</h2>
-      <p class="text-muted/80 leading-relaxed mb-4">
-        Most businesses lose leads simply because they can't respond fast enough. We built Drivverk AB to fix that — using AI that works around the clock so you never miss an opportunity.
-      </p>
-      <p class="text-muted/80 leading-relaxed">
-        We don't just automate processes. We design intelligent systems tailored to your business that qualify leads, follow up instantly, and fill your calendar with real, ready-to-buy clients.
-      </p>
-    </div>
-    <div class="fade-in grid grid-cols-2 gap-4" style="transition-delay:0.1s;">
-      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
-        <p class="text-4xl font-extrabold text-brand mb-1">100+</p>
-        <p class="text-sm text-muted/60">Businesses automated</p>
-      </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
-        <p class="text-4xl font-extrabold text-brand mb-1">24/7</p>
-        <p class="text-sm text-muted/60">AI uptime, always on</p>
-      </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
-        <p class="text-4xl font-extrabold text-brand mb-1">85%</p>
-        <p class="text-sm text-muted/60">Avg. lead response rate</p>
-      </div>
-      <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
-        <p class="text-4xl font-extrabold text-brand mb-1">60%</p>
-        <p class="text-sm text-muted/60">Reduction in no-shows</p>
-      </div>
-    </div>
-  </div>
+ <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+ <div class="fade-in">
+ <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">Our Mission</p>
+ <h2 class="text-3xl font-bold mb-4">Automation that actually converts</h2>
+ <p class="text-muted/80 leading-relaxed mb-4">
+ Most businesses lose leads simply because they can't respond fast enough. We built Drivverk AB to fix that, using automation that works around the clock so you never miss an opportunity.
+ </p>
+ <p class="text-muted/80 leading-relaxed">
+ We don't just automate processes. We design intelligent systems tailored to your business that qualify leads, follow up instantly, and fill your calendar with real, ready-to-buy clients.
+ </p>
+ </div>
+ <div class="fade-in grid grid-cols-2 gap-4" style="transition-delay:0.1s;">
+ <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
+ <p class="text-4xl font-extrabold text-brand mb-1">100+</p>
+ <p class="text-sm text-muted/60">Businesses automated</p>
+ </div>
+ <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
+ <p class="text-4xl font-extrabold text-brand mb-1">24/7</p>
+ <p class="text-sm text-muted/60">Uptime, always on</p>
+ </div>
+ <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
+ <p class="text-4xl font-extrabold text-brand mb-1">85%</p>
+ <p class="text-sm text-muted/60">Avg. lead response rate</p>
+ </div>
+ <div class="rounded-2xl p-6 text-center" style="background:#f5f4f0; border:1px solid #e8e6e0;">
+ <p class="text-4xl font-extrabold text-brand mb-1">60%</p>
+ <p class="text-sm text-muted/60">Reduction in no-shows</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- VALUES -->
 <section class="py-20 border-t section-sep" style="background: #f5f4f0;">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-14 fade-in">
-      <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">What Drives Us</p>
-      <h2 class="text-3xl font-bold">Our Values</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="value-card p-7 fade-in">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Speed</h3>
-        <p class="text-sm text-muted/70 leading-relaxed">The first business to respond wins the lead. Our AI responds in seconds, not hours.</p>
-      </div>
-      <div class="value-card p-7 fade-in" style="transition-delay:0.08s;">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Reliability</h3>
-        <p class="text-sm text-muted/70 leading-relaxed">Our systems run 24/7 with zero downtime. Your business never sleeps, and neither does our AI.</p>
-      </div>
-      <div class="value-card p-7 fade-in" style="transition-delay:0.16s;">
-        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        </div>
-        <h3 class="text-lg font-bold mb-2">Results</h3>
-        <p class="text-sm text-muted/70 leading-relaxed">We measure success in booked calls and closed revenue — not vanity metrics.</p>
-      </div>
-    </div>
-  </div>
+ <div class="max-w-5xl mx-auto px-6">
+ <div class="text-center mb-14 fade-in">
+ <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">What Drives Us</p>
+ <h2 class="text-3xl font-bold">Our Values</h2>
+ </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+ <div class="value-card p-7 fade-in">
+ <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+ </div>
+ <h3 class="text-lg font-bold mb-2">Speed</h3>
+ <p class="text-sm text-muted/70 leading-relaxed">The first business to respond wins the lead. Our system responds in seconds, not hours.</p>
+ </div>
+ <div class="value-card p-7 fade-in" style="transition-delay:0.08s;">
+ <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+ </div>
+ <h3 class="text-lg font-bold mb-2">Reliability</h3>
+ <p class="text-sm text-muted/70 leading-relaxed">Our systems run 24/7 with zero downtime. Your business never sleeps, and neither does ours.</p>
+ </div>
+ <div class="value-card p-7 fade-in" style="transition-delay:0.16s;">
+ <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:#eff6ff;">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+ </div>
+ <h3 class="text-lg font-bold mb-2">Results</h3>
+ <p class="text-sm text-muted/70 leading-relaxed">We measure success in booked calls and closed revenue not vanity metrics.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- TEAM -->
 <section class="py-20 border-t section-sep" style="background: #f5f4f0;">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center mb-14 fade-in">
-      <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">The Team</p>
-      <h2 class="text-3xl font-bold">Built by People Who Care About Your Growth</h2>
-      <p class="text-muted/60 text-sm mt-3 max-w-xl mx-auto">We're a focused team of AI engineers, automation specialists, and growth strategists dedicated to one thing: getting you more customers.</p>
-    </div>
+ <div class="max-w-4xl mx-auto px-6">
+ <div class="text-center mb-14 fade-in">
+ <p class="text-sm font-semibold uppercase tracking-widest text-brand mb-3">The Team</p>
+ <h2 class="text-3xl font-bold">Built by People Who Care About Your Growth</h2>
+ <p class="text-muted/60 text-sm mt-3 max-w-xl mx-auto">We're a focused team of engineers, automation specialists, and growth strategists dedicated to one thing: getting you more customers.</p>
+ </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="value-card p-7 flex items-start gap-5 fade-in">
-        <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold text-brand" style="background:#e8e6e0;">K</div>
-        <div>
-          <p class="font-bold text-heading">Kasper Bäckman</p>
-          <p class="text-xs text-brand mb-2">CEO & Co-Founder · Uppsala, Sweden</p>
-          <p class="text-sm text-muted/70 leading-relaxed">Based in Uppsala, Sweden. Building AI systems that help businesses capture more leads and book more clients on autopilot.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="value-card p-7 flex items-start gap-5 fade-in">
+ <div class="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-xl font-bold text-brand" style="background:#e8e6e0;">K</div>
+ <div>
+ <p class="font-bold text-heading">Kasper Bäckman</p>
+ <p class="text-xs text-brand mb-2">CEO & Co-Founder · Uppsala, Sweden</p>
+ <p class="text-sm text-muted/70 leading-relaxed">Based in Uppsala, Sweden. Building systems that help businesses capture more leads and book more clients on autopilot.</p>
+ </div>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- CTA -->
 <section class="py-24 border-t section-sep text-center px-6" style="background: #f5f4f0;">
-  <div class="max-w-xl mx-auto fade-in">
-    <h2 class="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
-    <p class="text-muted/70 text-sm mb-8">Book a free consultation and see exactly how we'd build an AI system for your business.</p>
-    <a href="index.html#final-cta" class="btn-primary px-10 py-4 text-base inline-block">Book Free Consultation</a>
-  </div>
+ <div class="max-w-xl mx-auto fade-in">
+ <h2 class="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+ <p class="text-muted/70 text-sm mb-8">Book a free consultation and see exactly how we'd build an system for your business.</p>
+ <a href="index.html#final-cta" class="btn-primary px-10 py-4 text-base inline-block">Book Free Consultation</a>
+ </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="border-t section-sep pt-8 pb-6 text-center" style="background: #f5f4f0;">
-  <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
-    <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-      <img src="logo.png" alt="Drivverk AB" style="height:26px; width:auto; mix-blend-mode: multiply;" />
-      <span class="text-sm font-bold text-heading">Drivverk AB</span>
-    </a>
-    <div class="flex gap-6">
-      <a href="about.html"   class="text-xs text-muted/50 hover:text-brand transition-colors">About Us</a>
-      <a href="privacy.html" class="text-xs text-muted/50 hover:text-brand transition-colors">Privacy Policy</a>
-      <a href="index.html#final-cta" class="text-xs text-muted/50 hover:text-brand transition-colors">Contact</a>
-    </div>
-    <p class="text-xs text-muted/40">© 2026 Drivverk AB. All Rights Reserved.</p>
-  </div>
+ <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3">
+ <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+ <img src="logo.png" alt="Drivverk AB" style="height:26px; width:auto; mix-blend-mode: multiply;" />
+ <span class="text-sm font-bold text-heading">Drivverk AB</span>
+ </a>
+ <div class="flex gap-6">
+ <a href="about.html" class="text-xs text-muted/50 hover:text-brand transition-colors">About Us</a>
+ <a href="privacy.html" class="text-xs text-muted/50 hover:text-brand transition-colors">Privacy Policy</a>
+ <a href="index.html#final-cta" class="text-xs text-muted/50 hover:text-brand transition-colors">Contact</a>
+ </div>
+ <p class="text-xs text-muted/40">© 2026 Drivverk AB. All Rights Reserved.</p>
+ </div>
 </footer>
 
 <script>
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-    });
-  }, { threshold: 0.12 });
-  fadeEls.forEach(el => observer.observe(el));
+ const fadeEls = document.querySelectorAll('.fade-in');
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+ });
+ }, { threshold: 0.12 });
+ fadeEls.forEach(el => observer.observe(el));
 </script>
 
 </body>

@@ -1,866 +1,866 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drivverk AB – AI Automation for Business Growth</title>
-  <meta name="description" content="We build AI systems that capture, qualify, and book leads for your business 24/7. Get more customers on autopilot." />
-  <link rel="icon" type="image/svg+xml" href="https://cognitivesystems.eu/vite.svg" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand:   '#1a1a1a',
-            dark:    '#1a1a1a',
-            panel:   '#f5f4f0',
-            card:    '#ffffff',
-            muted:   '#3a3a3a',
-            heading: '#1a1a1a',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #f5f4f0; color: #3a3a3a; line-height: 1.75; }
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Drivverk AB – Automation for Business Growth</title>
+ <meta name="description" content="We build systems that capture, qualify, and book leads for your business 24/7. Get more customers on autopilot." />
+ <link rel="icon" type="image/svg+xml" href="https://cognitivesystems.eu/vite.svg" />
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ brand: '#1a1a1a',
+ dark: '#1a1a1a',
+ panel: '#f5f4f0',
+ card: '#ffffff',
+ muted: '#3a3a3a',
+ heading: '#1a1a1a',
+ },
+ fontFamily: {
+ sans: ['Inter', 'system-ui', 'sans-serif'],
+ },
+ },
+ },
+ };
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+ <style>
+ html { scroll-behavior: smooth; }
+ body { font-family: 'Inter', system-ui, sans-serif; background: #f5f4f0; color: #3a3a3a; line-height: 1.75; }
 
-    h1 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; animation: none; filter: none; }
-    h2, h3 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; filter: none; font-weight: 700; line-height: 1.15; }
+ h1 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; animation: none; filter: none; }
+ h2, h3 { color: #1a1a1a; background: none; -webkit-text-fill-color: #1a1a1a; filter: none; font-weight: 700; line-height: 1.15; }
 
-    /* text-gradient now just renders as dark */
-    .text-gradient { color: #1a1a1a; -webkit-text-fill-color: #1a1a1a; background: none; }
+ /* text-gradient now just renders as dark */
+.text-gradient { color: #1a1a1a; -webkit-text-fill-color: #1a1a1a; background: none; }
 
-    /* ── BUTTONS ─────────────────────────────────────────────── */
-    .btn-primary {
-      background: #1a1a1a; color: #ffffff; font-weight: 700; border-radius: 8px;
-      letter-spacing: 0.01em; font-size: 0.875rem; border: none;
-      transition: background 0.2s ease; display: inline-block; text-decoration: none;
-    }
-    .btn-primary:hover { background: #333333; }
+ /* ── BUTTONS ─────────────────────────────────────────────── */
+.btn-primary {
+ background: #1a1a1a; color: #ffffff; font-weight: 700; border-radius: 8px;
+ letter-spacing: 0.01em; font-size: 0.875rem; border: none;
+ transition: background 0.2s ease; display: inline-block; text-decoration: none;
+ }
+.btn-primary:hover { background: #333333; }
 
-    .btn-outline {
-      border: 1px solid #c8c6c0; color: #1a1a1a; font-weight: 700; border-radius: 8px;
-      letter-spacing: 0.01em; font-size: 0.875rem; background: transparent;
-      transition: border-color 0.2s ease, background 0.2s ease;
-      display: inline-block; text-decoration: none;
-    }
-    .btn-outline:hover { border-color: #1a1a1a; background: rgba(26,26,26,0.04); }
+.btn-outline {
+ border: 1px solid #c8c6c0; color: #1a1a1a; font-weight: 700; border-radius: 8px;
+ letter-spacing: 0.01em; font-size: 0.875rem; background: transparent;
+ transition: border-color 0.2s ease, background 0.2s ease;
+ display: inline-block; text-decoration: none;
+ }
+.btn-outline:hover { border-color: #1a1a1a; background: rgba(26,26,26,0.04); }
 
-    /* ── ALL CARDS ───────────────────────────────────────────── */
-    .product-card, .testi-card, .demo-card, .dark-product-card, .case-card {
-      background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-    .product-card:hover, .testi-card:hover, .demo-card:hover,
-    .dark-product-card:hover, .case-card:hover {
-      border-color: #c8c6c0; transform: translateY(-2px);
-    }
+ /* ── ALL CARDS ───────────────────────────────────────────── */
+.product-card,.testi-card,.demo-card,.dark-product-card,.case-card {
+ background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+ transition: border-color 0.2s ease, transform 0.2s ease;
+ }
+.product-card:hover,.testi-card:hover,.demo-card:hover,
+.dark-product-card:hover,.case-card:hover {
+ border-color: #c8c6c0; transform: translateY(-2px);
+ }
 
-    /* ── ICON WRAPPERS ───────────────────────────────────────── */
-    .icon-wrap, .dark-icon-wrap {
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-      background: #f5f4f0; border: 1px solid #e8e6e0; border-radius: 10px;
-      margin-bottom: 18px; flex-shrink: 0;
-      transition: border-color 0.2s ease;
-    }
-    .icon-wrap { border-radius: 12px; }
-    .product-card:hover .icon-wrap { border-color: #c8c6c0; }
+ /* ── ICON WRAPPERS ───────────────────────────────────────── */
+.icon-wrap,.dark-icon-wrap {
+ width: 44px; height: 44px;
+ display: flex; align-items: center; justify-content: center;
+ background: #f5f4f0; border: 1px solid #e8e6e0; border-radius: 10px;
+ margin-bottom: 18px; flex-shrink: 0;
+ transition: border-color 0.2s ease;
+ }
+.icon-wrap { border-radius: 12px; }
+.product-card:hover .icon-wrap { border-color: #c8c6c0; }
 
-    /* ── BADGES / LABELS ─────────────────────────────────────── */
-    .label-badge, .dark-badge {
-      background: #ffffff; border: 1px solid #e8e6e0; color: #888880;
-      border-radius: 999px; padding: 6px 14px; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; display: inline-block;
-    }
+ /* ── BADGES / LABELS ─────────────────────────────────────── */
+.label-badge,.dark-badge {
+ background: #ffffff; border: 1px solid #e8e6e0; color: #888880;
+ border-radius: 999px; padding: 6px 14px; font-size: 11px; font-weight: 700;
+ letter-spacing: 0.08em; text-transform: uppercase; display: inline-block;
+ }
 
-    /* ── CARD BUTTONS ────────────────────────────────────────── */
-    .btn-dark-primary {
-      display: inline-block; background: transparent; color: #1a1a1a;
-      border: 1px solid #c8c6c0; font-weight: 700; border-radius: 8px;
-      font-size: 0.8rem; padding: 10px 20px;
-      transition: background 0.2s ease, border-color 0.2s ease; text-decoration: none;
-    }
-    .btn-dark-primary:hover { background: rgba(26,26,26,0.04); border-color: #1a1a1a; }
+ /* ── CARD BUTTONS ────────────────────────────────────────── */
+.btn-dark-primary {
+ display: inline-block; background: transparent; color: #1a1a1a;
+ border: 1px solid #c8c6c0; font-weight: 700; border-radius: 8px;
+ font-size: 0.8rem; padding: 10px 20px;
+ transition: background 0.2s ease, border-color 0.2s ease; text-decoration: none;
+ }
+.btn-dark-primary:hover { background: rgba(26,26,26,0.04); border-color: #1a1a1a; }
 
-    .btn-dark-ghost {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: transparent; color: #888880; border: none; font-weight: 600;
-      font-size: 0.8rem; padding: 10px 4px; cursor: pointer; text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .btn-dark-ghost:hover { color: #1a1a1a; }
+.btn-dark-ghost {
+ display: inline-flex; align-items: center; gap: 5px;
+ background: transparent; color: #888880; border: none; font-weight: 600;
+ font-size: 0.8rem; padding: 10px 4px; cursor: pointer; text-decoration: none;
+ transition: color 0.2s ease;
+ }
+.btn-dark-ghost:hover { color: #1a1a1a; }
 
-    /* ── CASE STUDY CARDS ────────────────────────────────────── */
-    .case-card { padding: 2rem 2.25rem; }
-    .case-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
-    .case-company { font-size: 1.35rem; font-weight: 800; color: #1a1a1a; letter-spacing: -0.01em; }
-    .case-industry { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; color: #888880; background: #f5f4f0; border: 1px solid #e8e6e0; border-radius: 999px; padding: 4px 12px; white-space: nowrap; flex-shrink: 0; }
-    .case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .case-tag { font-size: 0.72rem; color: #3a3a3a; background: #f5f4f0; border: 1px solid #e8e6e0; border-radius: 999px; padding: 4px 12px; letter-spacing: 0.02em; }
-    .case-quote { font-size: 1rem; color: #3a3a3a; font-style: italic; line-height: 1.75; margin-bottom: 0; padding-bottom: 24px; border-bottom: 1px solid #e8e6e0; }
-    .case-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; margin-bottom: 22px; }
-    .case-stat-num { font-size: 2rem; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
-    .case-stat-label { font-size: 0.8rem; color: #888880; margin-top: 4px; line-height: 1.4; }
-    .case-footer { display: flex; align-items: center; gap: 10px; }
-    .case-stars { color: #d4a017; font-size: 0.85rem; letter-spacing: 1px; }
-    .case-name  { font-size: 0.82rem; color: #888880; }
+ /* ── CASE STUDY CARDS ────────────────────────────────────── */
+.case-card { padding: 2rem 2.25rem; }
+.case-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.case-company { font-size: 1.35rem; font-weight: 800; color: #1a1a1a; letter-spacing: -0.01em; }
+.case-industry { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; color: #888880; background: #f5f4f0; border: 1px solid #e8e6e0; border-radius: 999px; padding: 4px 12px; white-space: nowrap; flex-shrink: 0; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.case-tag { font-size: 0.72rem; color: #3a3a3a; background: #f5f4f0; border: 1px solid #e8e6e0; border-radius: 999px; padding: 4px 12px; letter-spacing: 0.02em; }
+.case-quote { font-size: 1rem; color: #3a3a3a; font-style: italic; line-height: 1.75; margin-bottom: 0; padding-bottom: 24px; border-bottom: 1px solid #e8e6e0; }
+.case-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; margin-bottom: 22px; }
+.case-stat-num { font-size: 2rem; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
+.case-stat-label { font-size: 0.8rem; color: #888880; margin-top: 4px; line-height: 1.4; }
+.case-footer { display: flex; align-items: center; gap: 10px; }
+.case-stars { color: #d4a017; font-size: 0.85rem; letter-spacing: 1px; }
+.case-name { font-size: 0.82rem; color: #888880; }
 
-    /* ── SOCIAL PROOF BAR ────────────────────────────────────── */
-    .proof-strip { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px; padding: 2rem; display: flex; justify-content: center; gap: 0; flex-wrap: wrap; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-    .proof-strip-item { flex: 1; min-width: 160px; text-align: center; padding: 0.75rem 1.5rem; position: relative; }
-    .proof-strip-item + .proof-strip-item::before { content: ''; position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: #e8e6e0; }
-    @media (max-width: 640px) { .proof-strip-item + .proof-strip-item::before { display: none; } }
-    .proof-strip-num { font-size: 1.6rem; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
-    .proof-strip-label { font-size: 0.78rem; color: #888880; margin-top: 5px; line-height: 1.4; }
+ /* ── SOCIAL PROOF BAR ────────────────────────────────────── */
+.proof-strip { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 16px; padding: 2rem; display: flex; justify-content: center; gap: 0; flex-wrap: wrap; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.proof-strip-item { flex: 1; min-width: 160px; text-align: center; padding: 0.75rem 1.5rem; position: relative; }
+.proof-strip-item + .proof-strip-item::before { content: ''; position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: #e8e6e0; }
+ @media (max-width: 640px) {.proof-strip-item + .proof-strip-item::before { display: none; } }
+.proof-strip-num { font-size: 1.6rem; font-weight: 700; color: #1a1a1a; line-height: 1.1; }
+.proof-strip-label { font-size: 0.78rem; color: #888880; margin-top: 5px; line-height: 1.4; }
 
-    /* ── STARS ───────────────────────────────────────────────── */
-    .stars { color: #d4a017; }
+ /* ── STARS ───────────────────────────────────────────────── */
+.stars { color: #d4a017; }
 
-    /* ── CALCULATOR RESULT ───────────────────────────────────── */
-    #calc-result { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 14px; }
+ /* ── CALCULATOR RESULT ───────────────────────────────────── */
+ #calc-result { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 14px; }
 
-    /* ── INPUTS ──────────────────────────────────────────────── */
-    .calc-input, .email-input {
-      background: #ffffff; border: 1px solid #e8e6e0; border-radius: 8px;
-      color: #1a1a1a; font-size: 15px; transition: border-color 0.2s;
-    }
-    .calc-input { padding: 13px 16px; width: 100%; }
-    .email-input { padding: 14px 18px; }
-    .calc-input:focus, .email-input:focus { outline: none; border-color: #1a1a1a; }
-    .calc-input::placeholder, .email-input::placeholder { color: #888880; }
+ /* ── INPUTS ──────────────────────────────────────────────── */
+.calc-input,.email-input {
+ background: #ffffff; border: 1px solid #e8e6e0; border-radius: 8px;
+ color: #1a1a1a; font-size: 15px; transition: border-color 0.2s;
+ }
+.calc-input { padding: 13px 16px; width: 100%; }
+.email-input { padding: 14px 18px; }
+.calc-input:focus,.email-input:focus { outline: none; border-color: #1a1a1a; }
+.calc-input::placeholder,.email-input::placeholder { color: #888880; }
 
-    /* ── VIDEO ───────────────────────────────────────────────── */
-    .video-placeholder {
-      position: relative; overflow: hidden; background: #f5f4f0;
-      border: 1px solid #e8e6e0; border-radius: 14px; aspect-ratio: 16/9;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      cursor: pointer; transition: border-color 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    }
-    .video-placeholder:hover { border-color: #c8c6c0; }
-    .play-btn { width: 68px; height: 68px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; transition: background 0.2s ease; }
-    .video-placeholder:hover .play-btn { background: #333; }
+ /* ── VIDEO ───────────────────────────────────────────────── */
+.video-placeholder {
+ position: relative; overflow: hidden; background: #f5f4f0;
+ border: 1px solid #e8e6e0; border-radius: 14px; aspect-ratio: 16/9;
+ display: flex; flex-direction: column; align-items: center; justify-content: center;
+ cursor: pointer; transition: border-color 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+ }
+.video-placeholder:hover { border-color: #c8c6c0; }
+.play-btn { width: 68px; height: 68px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; transition: background 0.2s ease; }
+.video-placeholder:hover.play-btn { background: #333; }
 
-    /* ── EXIT POPUP ──────────────────────────────────────────── */
-    #exit-popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(6px); }
-    #exit-popup.active { display: flex; }
-    #exit-popup .popup-panel { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+ /* ── EXIT POPUP ──────────────────────────────────────────── */
+ #exit-popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(6px); }
+ #exit-popup.active { display: flex; }
+ #exit-popup.popup-panel { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 
-    /* ── MISC ────────────────────────────────────────────────── */
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: flex; }
-    .section-sep { border-color: #e8e6e0; }
-    .step-num { background: #f5f4f0; border: 1px solid #e8e6e0; color: #1a1a1a; font-weight: 700; }
-    .proof-bar { display: inline-flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #e8e6e0; border-radius: 999px; padding: 6px 16px; }
+ /* ── MISC ────────────────────────────────────────────────── */
+ #mobile-menu { display: none; }
+ #mobile-menu.open { display: flex; }
+.section-sep { border-color: #e8e6e0; }
+.step-num { background: #f5f4f0; border: 1px solid #e8e6e0; color: #1a1a1a; font-weight: 700; }
+.proof-bar { display: inline-flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #e8e6e0; border-radius: 999px; padding: 6px 16px; }
 
-    /* ── FADE-IN ─────────────────────────────────────────────── */
-    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
-    .fade-in.visible { opacity: 1; transform: none; }
+ /* ── FADE-IN ─────────────────────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+.fade-in.visible { opacity: 1; transform: none; }
 
-    /* ── NAV ─────────────────────────────────────────────────── */
-    #header.scrolled { background: rgba(245,244,240,0.98) !important; backdrop-filter: blur(16px) !important; border-bottom: 1px solid #e8e6e0 !important; }
-    nav a { position: relative; padding-bottom: 2px; }
-    nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: #1a1a1a; transition: width 0.25s ease; }
-    nav a:hover::after { width: 100%; }
+ /* ── NAV ─────────────────────────────────────────────────── */
+ #header.scrolled { background: rgba(245,244,240,0.98) !important; backdrop-filter: blur(16px) !important; border-bottom: 1px solid #e8e6e0 !important; }
+ nav a { position: relative; padding-bottom: 2px; }
+ nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: #1a1a1a; transition: width 0.25s ease; }
+ nav a:hover::after { width: 100%; }
 
-    @media (max-width: 768px) { .step-line::after { display: none; } }
-  </style>
+ @media (max-width: 768px) {.step-line::after { display: none; } }
+ </style>
 </head>
 <body>
 
 <!-- ============================================================
-     HEADER
+ HEADER
 ============================================================ -->
 <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" style="background: rgba(245,244,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid #e8e6e0;">
-  <div class="max-w-6xl mx-auto px-8 flex items-center justify-between" style="height: 72px;">
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-      <img src="logo.png" alt="Drivverk AB" style="height:54px; width:auto; mix-blend-mode: multiply;" />
-      <span class="text-lg font-bold tracking-tight" style="color: #1a1a1a;">Drivverk AB</span>
-    </a>
+ <div class="max-w-6xl mx-auto px-8 flex items-center justify-between" style="height: 72px;">
+ <!-- Logo -->
+ <a href="#" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+ <img src="logo.png" alt="Drivverk AB" style="height:54px; width:auto; mix-blend-mode: multiply;" />
+ <span class="text-lg font-bold tracking-tight" style="color: #1a1a1a;">Drivverk AB</span>
+ </a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-8">
-      <a href="#products"     class="text-sm transition-colors" style="color: #3a3a3a;">Products</a>
-      <a href="#testimonials" class="text-sm transition-colors" style="color: #3a3a3a;">Results</a>
-      <a href="#demo"         class="text-sm transition-colors" style="color: #3a3a3a;">Demo</a>
-    </nav>
+ <!-- Desktop nav -->
+ <nav class="hidden md:flex items-center gap-8">
+ <a href="#products" class="text-sm transition-colors" style="color: #3a3a3a;">Products</a>
+ <a href="#testimonials" class="text-sm transition-colors" style="color: #3a3a3a;">Results</a>
+ <a href="#demo" class="text-sm transition-colors" style="color: #3a3a3a;">Demo</a>
+ </nav>
 
-    <!-- CTA -->
-    <div class="hidden md:flex items-center gap-3">
-      <a href="#final-cta" class="btn-primary px-5 py-2.5 text-sm">Request Demo</a>
-    </div>
+ <!-- CTA -->
+ <div class="hidden md:flex items-center gap-3">
+ <a href="#final-cta" class="btn-primary px-5 py-2.5 text-sm">Request Demo</a>
+ </div>
 
-    <!-- Mobile hamburger -->
-    <button id="hamburger" class="md:hidden p-2" style="color: #1a1a1a;" aria-label="Open menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6"  x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
-  </div>
+ <!-- Mobile hamburger -->
+ <button id="hamburger" class="md:hidden p-2" style="color: #1a1a1a;" aria-label="Open menu">
+ <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+ <line x1="3" y1="6" x2="21" y2="6"/>
+ <line x1="3" y1="12" x2="21" y2="12"/>
+ <line x1="3" y1="18" x2="21" y2="18"/>
+ </svg>
+ </button>
+ </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden flex-col px-6 py-4 gap-4" style="background: #f5f4f0; border-top: 1px solid #e8e6e0;">
-    <a href="#products"     class="text-sm py-2 block" style="color: #3a3a3a;" onclick="closeMobileMenu()">Products</a>
-    <a href="#testimonials" class="text-sm py-2 block" style="color: #3a3a3a;" onclick="closeMobileMenu()">Results</a>
-    <a href="#demo"         class="text-sm py-2 block" style="color: #3a3a3a;" onclick="closeMobileMenu()">Demo</a>
-    <a href="#final-cta"    class="btn-primary text-center block py-3 text-sm mt-2" onclick="closeMobileMenu()">Request Demo</a>
-  </div>
+ <!-- Mobile menu -->
+ <div id="mobile-menu" class="md:hidden flex-col px-6 py-4 gap-4" style="background: #f5f4f0; border-top: 1px solid #e8e6e0;">
+ <a href="#products" class="text-sm py-2 block" style="color: #3a3a3a;" onclick="closeMobileMenu()">Products</a>
+ <a href="#testimonials" class="text-sm py-2 block" style="color: #3a3a3a;" onclick="closeMobileMenu()">Results</a>
+ <a href="#demo" class="text-sm py-2 block" style="color: #3a3a3a;" onclick="closeMobileMenu()">Demo</a>
+ <a href="#final-cta" class="btn-primary text-center block py-3 text-sm mt-2" onclick="closeMobileMenu()">Request Demo</a>
+ </div>
 </header>
 
 
 <!-- ============================================================
-     HERO SECTION
+ HERO SECTION
 ============================================================ -->
 <section class="relative min-h-screen flex items-center pt-36 pb-28" style="background: #f5f4f0; border-bottom: 1px solid #e8e6e0;">
-  <div class="absolute inset-0 pointer-events-none"></div>
+ <div class="absolute inset-0 pointer-events-none"></div>
 
-  <div class="max-w-6xl mx-auto px-6 w-full relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+ <div class="max-w-6xl mx-auto px-6 w-full relative z-10">
+ <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <!-- Left: Copy -->
-      <div class="flex flex-col gap-6">
+ <!-- Left: Copy -->
+ <div class="flex flex-col gap-6">
 
-        <!-- Pill label -->
-        <div class="label-badge w-fit">Cognitive Systems</div>
+ <!-- Pill label -->
+ <div class="label-badge w-fit">Cognitive Systems</div>
 
-        <!-- Headline -->
-        <h1 style="font-size: clamp(2.6rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; background: none; -webkit-text-fill-color: #1a1a1a; color: #1a1a1a;">
-          Every Missed Call Is<br/>a Client You Just Lost.
-        </h1>
+ <!-- Headline -->
+ <h1 style="font-size: clamp(2.6rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; background: none; -webkit-text-fill-color: #1a1a1a; color: #1a1a1a;">
+ Every Missed Call Is<br/>a Client You Just Lost.
+ </h1>
 
-        <!-- Subtext -->
-        <p style="font-size: 17px; color: #888880; line-height: 1.7; max-width: 480px;">
-          We build done-for-you AI systems that answer calls, capture leads,
-          and book clients 24/7 — so nothing slips through the cracks.
-        </p>
+ <!-- Subtext -->
+ <p style="font-size: 17px; color: #888880; line-height: 1.7; max-width: 480px;">
+ We build done-for-you systems that answer calls, capture leads,
+ and book clients 24/7 so nothing slips through the cracks.
+ </p>
 
-        <!-- Buttons -->
-        <div class="flex flex-col sm:flex-row gap-3 mt-1">
-          <a href="#demo" class="btn-primary px-8 py-4 text-base text-center">
-            See How It Works
-          </a>
-          <a href="#final-cta" class="btn-outline px-8 py-4 text-base text-center">
-            Book a Free Demo
-          </a>
-        </div>
+ <!-- Buttons -->
+ <div class="flex flex-col sm:flex-row gap-3 mt-1">
+ <a href="#demo" class="btn-primary px-8 py-4 text-base text-center">
+ See How It Works
+ </a>
+ <a href="#final-cta" class="btn-outline px-8 py-4 text-base text-center">
+ Book a Free Demo
+ </a>
+ </div>
 
-        <!-- Micro-stats -->
-        <p style="font-size: 13px; color: #888880; line-height: 1.6; margin-top: 2px;">
-          ✓ Setup in 48hrs &nbsp;·&nbsp; ✓ No tech skills needed &nbsp;·&nbsp; ✓ Cancel anytime
-        </p>
+ <!-- Micro-stats -->
+ <p style="font-size: 13px; color: #888880; line-height: 1.6; margin-top: 2px;">
+ ✓ Setup in 48hrs &nbsp;·&nbsp; ✓ No tech skills needed &nbsp;·&nbsp; ✓ Cancel anytime
+ </p>
 
-      </div>
+ </div>
 
-      <!-- Right: Video (unchanged) -->
-      <div class="w-full">
-        <div class="video-placeholder" style="padding:0; overflow:hidden;">
-          <video
-            src="0405.mp4"
-            controls
-            playsinline
-            preload="metadata"
-            style="width:100%; height:100%; object-fit:cover; border-radius:12px; display:block;"
-          ></video>
-        </div>
-      </div>
+ <!-- Right: Video (unchanged) -->
+ <div class="w-full">
+ <div class="video-placeholder" style="padding:0; overflow:hidden;">
+ <video
+ src="0405.mp4"
+ controls
+ playsinline
+ preload="metadata"
+ style="width:100%; height:100%; object-fit:cover; border-radius:12px; display:block;"
+ ></video>
+ </div>
+ </div>
 
-    </div>
-  </div>
+ </div>
+ </div>
 </section>
 
 
 <!-- ============================================================
-     PRODUCTS
+ PRODUCTS
 ============================================================ -->
 <section id="products" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
-  <div class="max-w-5xl mx-auto px-6">
+ <div class="max-w-5xl mx-auto px-6">
 
-    <div class="text-center mb-16 fade-in">
-      <p class="label-badge mb-5">What We Build</p>
-      <h2 class="text-3xl md:text-4xl mb-4">Our AI Products</h2>
-      <p class="mx-auto" style="color:#888880; font-size:17px; line-height:1.75; max-width:560px;">Plug-and-play systems built specifically to generate and close more revenue.</p>
-    </div>
+ <div class="text-center mb-16 fade-in">
+ <p class="label-badge mb-5">What We Build</p>
+ <h2 class="text-3xl md:text-4xl mb-4">Our Products</h2>
+ <p class="mx-auto" style="color:#888880; font-size:17px; line-height:1.75; max-width:560px;">Plug-and-play systems built specifically to generate and close more revenue.</p>
+ </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <!-- Card 1: AI Lead Qualification -->
-      <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem;">
-        <div class="dark-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-        </div>
-        <h3 class="text-xl mb-1" style="color:#1a1a1a;">AI Lead Qualification</h3>
-        <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Filter time-wasters. Close faster.</p>
-        <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
-          <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">3×</p>
-          <p style="font-size:13px; color:#888880; margin-top:3px;">more qualified calls per month</p>
-        </div>
-        <ul class="space-y-3 mb-7">
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Filters high-quality leads instantly
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Automatically follows up via SMS or email
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Delivers ready-to-buy prospects to your calendar
-          </li>
-        </ul>
-        <div class="flex items-center gap-4 flex-wrap">
-          <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
-          <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
+ <!-- Card 1: Lead Qualification -->
+ <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem;">
+ <div class="dark-icon-wrap">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+ </div>
+ <h3 class="text-xl mb-1" style="color:#1a1a1a;"> Lead Qualification</h3>
+ <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Filter time-wasters. Close faster.</p>
+ <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
+ <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">3×</p>
+ <p style="font-size:13px; color:#888880; margin-top:3px;">more qualified calls per month</p>
+ </div>
+ <ul class="space-y-3 mb-7">
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Filters high-quality leads instantly
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Automatically follows up via SMS or email
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Delivers ready-to-buy prospects to your calendar
+ </li>
+ </ul>
+ <div class="flex items-center gap-4 flex-wrap">
+ <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
+ <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+ </div>
+ </div>
 
-      <!-- Card 2: AI Lead Reactivation -->
-      <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem; transition-delay:0.05s;">
-        <div class="dark-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
-        </div>
-        <h3 class="text-xl mb-1" style="color:#1a1a1a;">AI Lead Reactivation</h3>
-        <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Turn cold leads into closed deals.</p>
-        <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
-          <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">€40K</p>
-          <p style="font-size:13px; color:#888880; margin-top:3px;">avg recovered per reactivation campaign</p>
-        </div>
-        <ul class="space-y-3 mb-7">
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Re-engages old leads automatically
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Sends personalised multi-step follow-up sequences
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Books new opportunities automatically
-          </li>
-        </ul>
-        <div class="flex items-center gap-4 flex-wrap">
-          <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
-          <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
+ <!-- Card 2: Lead Reactivation -->
+ <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem; transition-delay:0.05s;">
+ <div class="dark-icon-wrap">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0.49-4"/></svg>
+ </div>
+ <h3 class="text-xl mb-1" style="color:#1a1a1a;"> Lead Reactivation</h3>
+ <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Turn cold leads into closed deals.</p>
+ <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
+ <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">€40K</p>
+ <p style="font-size:13px; color:#888880; margin-top:3px;">avg recovered per reactivation campaign</p>
+ </div>
+ <ul class="space-y-3 mb-7">
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Re-engages old leads automatically
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Sends personalised multi-step follow-up sequences
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Books new opportunities automatically
+ </li>
+ </ul>
+ <div class="flex items-center gap-4 flex-wrap">
+ <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
+ <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+ </div>
+ </div>
 
-      <!-- Card 3: AI Receptionist -->
-      <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem; transition-delay:0.10s;">
-        <div class="dark-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.5 19.79 19.79 0 0 1 1.06 2.88 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.01.92z"/></svg>
-        </div>
-        <h3 class="text-xl mb-1" style="color:#1a1a1a;">AI Receptionist</h3>
-        <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Never miss a call. Never lose a booking.</p>
-        <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
-          <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">24/7</p>
-          <p style="font-size:13px; color:#888880; margin-top:3px;">zero staff needed</p>
-        </div>
-        <ul class="space-y-3 mb-7">
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Answers, qualifies, and books clients 24/7
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Handles hundreds of calls simultaneously
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Reduces or eliminates reception staff costs
-          </li>
-        </ul>
-        <div class="flex items-center gap-4 flex-wrap">
-          <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
-          <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
+ <!-- Card 3: Receptionist -->
+ <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem; transition-delay:0.10s;">
+ <div class="dark-icon-wrap">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.5 19.79 19.79 0 0 1 1.06 2.88 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.01.92z"/></svg>
+ </div>
+ <h3 class="text-xl mb-1" style="color:#1a1a1a;"> Receptionist</h3>
+ <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Never miss a call. Never lose a booking.</p>
+ <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
+ <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">24/7</p>
+ <p style="font-size:13px; color:#888880; margin-top:3px;">zero staff needed</p>
+ </div>
+ <ul class="space-y-3 mb-7">
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Answers, qualifies, and books clients 24/7
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Handles hundreds of calls simultaneously
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Reduces or eliminates reception staff costs
+ </li>
+ </ul>
+ <div class="flex items-center gap-4 flex-wrap">
+ <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
+ <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+ </div>
+ </div>
 
-      <!-- Card 4: Instagram DM Bot -->
-      <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem; transition-delay:0.15s;">
-        <div class="dark-icon-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
-        <h3 class="text-xl mb-1" style="color:#1a1a1a;">Instagram DM Bot</h3>
-        <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Convert comments into customers while you sleep.</p>
-        <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
-          <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">3–5</p>
-          <p style="font-size:13px; color:#888880; margin-top:3px;">calls booked per day on autopilot</p>
-        </div>
-        <ul class="space-y-3 mb-7">
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Monitors posts and ads for triggers
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Sends automated DMs and converts engagement to leads
-          </li>
-          <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
-            <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Ideal for product launches and campaigns
-          </li>
-        </ul>
-        <div class="flex items-center gap-4 flex-wrap">
-          <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
-          <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
+ <!-- Card 4: Instagram DM Bot -->
+ <div class="dark-product-card fade-in" style="padding: 2rem 2.25rem; transition-delay:0.15s;">
+ <div class="dark-icon-wrap">
+ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </div>
+ <h3 class="text-xl mb-1" style="color:#1a1a1a;">Instagram DM Bot</h3>
+ <p class="text-sm font-semibold mb-2" style="color:#ffffff;">Convert comments into customers while you sleep.</p>
+ <div class="mb-5" style="border-top:1px solid #e2e8f0; padding-top:18px;">
+ <p class="font-bold" style="font-size:28px; color:#1a1a1a; line-height:1.1; font-weight:700;">3–5</p>
+ <p style="font-size:13px; color:#888880; margin-top:3px;">calls booked per day on autopilot</p>
+ </div>
+ <ul class="space-y-3 mb-7">
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Monitors posts and ads for triggers
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Sends automated DMs and converts engagement to leads
+ </li>
+ <li class="flex gap-3 items-start text-sm" style="color:#9ca3af;">
+ <svg class="mt-0.5 flex-shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ Ideal for product launches and campaigns
+ </li>
+ </ul>
+ <div class="flex items-center gap-4 flex-wrap">
+ <a href="#final-cta" class="btn-dark-primary">Book a Demo</a>
+ <a href="#demo" class="btn-dark-ghost">See how it works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></a>
+ </div>
+ </div>
 
-    </div>
-  </div>
+ </div>
+ </div>
 </section>
 
 
 <!-- ============================================================
-     LIVE AI TEST
+ LIVE TEST
 ============================================================ -->
 <section id="demo" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
-  <div class="px-6 text-center" style="max-width: 680px; margin: 0 auto;">
+ <div class="px-6 text-center" style="max-width: 680px; margin: 0 auto;">
 
-    <div class="fade-in">
-      <p class="label-badge mb-5">Live Demo</p>
-      <h2 class="text-3xl md:text-4xl mb-4">Test It Live</h2>
-      <p class="mb-12" style="color: #888880; font-size: 17px; line-height: 1.75;">See how our system handles leads in real time.</p>
-    </div>
+ <div class="fade-in">
+ <p class="label-badge mb-5">Live Demo</p>
+ <h2 class="text-3xl md:text-4xl mb-4">Test It Live</h2>
+ <p class="mb-12" style="color: #888880; font-size: 17px; line-height: 1.75;">See how our system handles leads in real time.</p>
+ </div>
 
-    <div class="fade-in grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+ <div class="fade-in grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
 
-      <!-- Call option -->
-      <div class="demo-card p-8 flex flex-col items-center text-center">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background: #f5f4f0;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.5 19.79 19.79 0 0 1 1.06 2.88 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.01.92z"/>
-          </svg>
-        </div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Option 1 — Call Live</p>
-        <a href="tel:+46108086659" class="text-3xl font-extrabold text-heading hover:text-brand transition-colors mb-3 tracking-tight">+46 10-808 66 59</a>
-        <p class="text-sm text-muted/70 leading-relaxed">Call this number and hear it answer, qualify, and book a meeting in real time — exactly how it works for your clients.</p>
-      </div>
+ <!-- Call option -->
+ <div class="demo-card p-8 flex flex-col items-center text-center">
+ <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background: #f5f4f0;">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2">
+ <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 11.5 19.79 19.79 0 0 1 1.06 2.88 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.01.92z"/>
+ </svg>
+ </div>
+ <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Option 1: Call Live</p>
+ <a href="tel:+46108086659" class="text-3xl font-extrabold text-heading hover:text-brand transition-colors mb-3 tracking-tight">+46 10-808 66 59</a>
+ <p class="text-sm text-muted/70 leading-relaxed">Call this number and hear it answer, qualify, and book a meeting in real time exactly how it works for your clients.</p>
+ </div>
 
-      <!-- Email option -->
-      <div class="demo-card p-8 flex flex-col items-center text-center">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background: #f5f4f0;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2">
-            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
-        </div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Option 2 — Book via Email</p>
-        <p class="text-sm text-muted/70 leading-relaxed mb-5">Enter your email below and we'll follow up, qualify your request, and book a demo straight into your calendar.</p>
-        <form onsubmit="handleDemoForm(event)" class="w-full flex flex-col gap-3">
-          <input type="email" class="email-input w-full text-center" placeholder="Your email address" required />
-          <button type="submit" class="btn-primary py-3 text-sm w-full">See It Book Live</button>
-        </form>
-        <p id="demo-form-success" class="text-sm text-green-600 hidden mt-3">We'll be in touch shortly!</p>
-      </div>
+ <!-- Email option -->
+ <div class="demo-card p-8 flex flex-col items-center text-center">
+ <div class="w-14 h-14 rounded-full flex items-center justify-center mb-5" style="background: #f5f4f0;">
+ <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2">
+ <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+ </svg>
+ </div>
+ <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Option 2: Book via Email</p>
+ <p class="text-sm text-muted/70 leading-relaxed mb-5">Enter your email below and we'll follow up, qualify your request, and book a demo straight into your calendar.</p>
+ <form onsubmit="handleDemoForm(event)" class="w-full flex flex-col gap-3">
+ <input type="email" class="email-input w-full text-center" placeholder="Your email address" required />
+ <button type="submit" class="btn-primary py-3 text-sm w-full">See It Book Live</button>
+ </form>
+ <p id="demo-form-success" class="text-sm text-green-600 hidden mt-3">We'll be in touch shortly!</p>
+ </div>
 
-    </div>
+ </div>
 
-  </div>
+ </div>
 </section>
 
 
 <!-- ============================================================
-     TESTIMONIALS / CASE STUDIES
+ TESTIMONIALS / CASE STUDIES
 ============================================================ -->
 <section id="testimonials" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
-  <div class="max-w-5xl mx-auto px-6">
+ <div class="max-w-5xl mx-auto px-6">
 
-    <div class="text-center mb-16 fade-in">
-      <p class="label-badge mb-5">Results</p>
-      <h2 class="text-3xl md:text-4xl mb-4">Real Businesses. Real Results.</h2>
-      <p style="color:#888880; font-size:17px; line-height:1.75; max-width:480px; margin:0 auto;">A few of the companies we've built for.</p>
-    </div>
+ <div class="text-center mb-16 fade-in">
+ <p class="label-badge mb-5">Results</p>
+ <h2 class="text-3xl md:text-4xl mb-4">Real Businesses. Real Results.</h2>
+ <p style="color:#888880; font-size:17px; line-height:1.75; max-width:480px; margin:0 auto;">A few of the companies we've built for.</p>
+ </div>
 
-    <div class="flex flex-col" style="gap: 48px;">
+ <div class="flex flex-col" style="gap: 48px;">
 
-      <!-- ── Card 1: AMT Knivsta ─────────────────────────── -->
-      <div class="case-card fade-in">
-        <div class="case-header">
-          <span class="case-company">AMT Knivsta</span>
-          <span class="case-industry">Auto Service · Knivsta</span>
-        </div>
-        <div class="case-tags">
-          <span class="case-tag">AI Receptionist</span>
-          <span class="case-tag">Lead Database Reactivation</span>
-          <span class="case-tag">Website</span>
-          <span class="case-tag">Chatbot</span>
-        </div>
-        <p class="case-quote">"We had hundreds of old leads just sitting there. The reactivation campaign alone brought back 12 customers in the first month. The AI receptionist now handles every call — we haven't missed one since."</p>
-        <div class="case-stats">
-          <div>
-            <div class="case-stat-num">12</div>
-            <div class="case-stat-label">customers reactivated<br/>in month 1</div>
-          </div>
-          <div>
-            <div class="case-stat-num">100%</div>
-            <div class="case-stat-label">of calls<br/>answered</div>
-          </div>
-          <div>
-            <div class="case-stat-num">~8 hrs</div>
-            <div class="case-stat-label">saved per week<br/>on admin</div>
-          </div>
-        </div>
-        <div class="case-footer">
-          <span class="case-stars">★★★★★</span>
-          <span class="case-name">Ahmad T. · Owner, AMT Knivsta</span>
-        </div>
-      </div>
+ <!-- ── Card 1: AMT Knivsta ─────────────────────────── -->
+ <div class="case-card fade-in">
+ <div class="case-header">
+ <span class="case-company">AMT Knivsta</span>
+ <span class="case-industry">Auto Service · Knivsta</span>
+ </div>
+ <div class="case-tags">
+ <span class="case-tag"> Receptionist</span>
+ <span class="case-tag">Lead Database Reactivation</span>
+ <span class="case-tag">Website</span>
+ <span class="case-tag">Chatbot</span>
+ </div>
+ <p class="case-quote">"We had hundreds of old leads just sitting there. The reactivation campaign alone brought back 12 customers in the first month. The receptionist now handles every call — we haven't missed one since."</p>
+ <div class="case-stats">
+ <div>
+ <div class="case-stat-num">12</div>
+ <div class="case-stat-label">customers reactivated<br/>in month 1</div>
+ </div>
+ <div>
+ <div class="case-stat-num">100%</div>
+ <div class="case-stat-label">of calls<br/>answered</div>
+ </div>
+ <div>
+ <div class="case-stat-num">~8 hrs</div>
+ <div class="case-stat-label">saved per week<br/>on admin</div>
+ </div>
+ </div>
+ <div class="case-footer">
+ <span class="case-stars">★★★★★</span>
+ <span class="case-name">Ahmad T. · Owner, AMT Knivsta</span>
+ </div>
+ </div>
 
-      <!-- ── Card 2: CutsByGn ────────────────────────────── -->
-      <div class="case-card fade-in" style="transition-delay:0.08s;">
-        <div class="case-header">
-          <span class="case-company">CutsByGn</span>
-          <span class="case-industry">Barbershop · Stockholm</span>
-        </div>
-        <div class="case-tags">
-          <span class="case-tag">ManyChat Automation</span>
-          <span class="case-tag">Comments → Lead Capture</span>
-          <span class="case-tag">DM Automation 24/7</span>
-        </div>
-        <p class="case-quote">"People were commenting on my posts and I was losing them. Now every comment and DM gets an instant reply and they get booked automatically. I wake up with new appointments every morning."</p>
-        <div class="case-stats">
-          <div>
-            <div class="case-stat-num">340+</div>
-            <div class="case-stat-label">DMs captured<br/>per month</div>
-          </div>
-          <div>
-            <div class="case-stat-num">24/7</div>
-            <div class="case-stat-label">auto-reply<br/>active</div>
-          </div>
-          <div>
-            <div class="case-stat-num">~22</div>
-            <div class="case-stat-label">new bookings from<br/>social per month</div>
-          </div>
-        </div>
-        <div class="case-footer">
-          <span class="case-stars">★★★★★</span>
-          <span class="case-name">G.N. · Owner, CutsByGn</span>
-        </div>
-      </div>
+ <!-- ── Card 2: CutsByGn ────────────────────────────── -->
+ <div class="case-card fade-in" style="transition-delay:0.08s;">
+ <div class="case-header">
+ <span class="case-company">CutsByGn</span>
+ <span class="case-industry">Barbershop · Stockholm</span>
+ </div>
+ <div class="case-tags">
+ <span class="case-tag">ManyChat Automation</span>
+ <span class="case-tag">Comments → Lead Capture</span>
+ <span class="case-tag">DM Automation 24/7</span>
+ </div>
+ <p class="case-quote">"People were commenting on my posts and I was losing them. Now every comment and DM gets an instant reply and they get booked automatically. I wake up with new appointments every morning."</p>
+ <div class="case-stats">
+ <div>
+ <div class="case-stat-num">340+</div>
+ <div class="case-stat-label">DMs captured<br/>per month</div>
+ </div>
+ <div>
+ <div class="case-stat-num">24/7</div>
+ <div class="case-stat-label">auto-reply<br/>active</div>
+ </div>
+ <div>
+ <div class="case-stat-num">~22</div>
+ <div class="case-stat-label">new bookings from<br/>social per month</div>
+ </div>
+ </div>
+ <div class="case-footer">
+ <span class="case-stars">★★★★★</span>
+ <span class="case-name">G.N. · Owner, CutsByGn</span>
+ </div>
+ </div>
 
-      <!-- ── Card 3: Starlights Uppsala ─────────────────── -->
-      <div class="case-card fade-in" style="transition-delay:0.16s;">
-        <div class="case-header">
-          <span class="case-company">Starlights Uppsala</span>
-          <span class="case-industry">Events &amp; Lighting · Uppsala</span>
-        </div>
-        <div class="case-tags">
-          <span class="case-tag">TikTok Automation</span>
-          <span class="case-tag">Facebook &amp; Instagram</span>
-          <span class="case-tag">Video &amp; Slideshow Content</span>
-          <span class="case-tag">ManyChat Auto-replies</span>
-        </div>
-        <p class="case-quote">"We went from posting maybe once a week to having content go out daily across three platforms. Inquiries started coming in from people who'd never heard of us. The automations just run — we don't touch it."</p>
-        <div class="case-stats">
-          <div>
-            <div class="case-stat-num">Daily</div>
-            <div class="case-stat-label">posting across<br/>3 platforms</div>
-          </div>
-          <div>
-            <div class="case-stat-num">3×</div>
-            <div class="case-stat-label">more inbound<br/>inquiries</div>
-          </div>
-          <div>
-            <div class="case-stat-num">0 hrs</div>
-            <div class="case-stat-label">spent on manual<br/>posting per week</div>
-          </div>
-        </div>
-        <div class="case-footer">
-          <span class="case-stars">★★★★★</span>
-          <span class="case-name">Starlights Team · Uppsala</span>
-        </div>
-      </div>
+ <!-- ── Card 3: Starlights Uppsala ─────────────────── -->
+ <div class="case-card fade-in" style="transition-delay:0.16s;">
+ <div class="case-header">
+ <span class="case-company">Starlights Uppsala</span>
+ <span class="case-industry">Events &amp; Lighting · Uppsala</span>
+ </div>
+ <div class="case-tags">
+ <span class="case-tag">TikTok Automation</span>
+ <span class="case-tag">Facebook &amp; Instagram</span>
+ <span class="case-tag">Video &amp; Slideshow Content</span>
+ <span class="case-tag">ManyChat Auto-replies</span>
+ </div>
+ <p class="case-quote">"We went from posting maybe once a week to having content go out daily across three platforms. Inquiries started coming in from people who'd never heard of us. The automations just run we don't touch it."</p>
+ <div class="case-stats">
+ <div>
+ <div class="case-stat-num">Daily</div>
+ <div class="case-stat-label">posting across<br/>3 platforms</div>
+ </div>
+ <div>
+ <div class="case-stat-num">3×</div>
+ <div class="case-stat-label">more inbound<br/>inquiries</div>
+ </div>
+ <div>
+ <div class="case-stat-num">0 hrs</div>
+ <div class="case-stat-label">spent on manual<br/>posting per week</div>
+ </div>
+ </div>
+ <div class="case-footer">
+ <span class="case-stars">★★★★★</span>
+ <span class="case-name">Starlights Team · Uppsala</span>
+ </div>
+ </div>
 
-    </div>
+ </div>
 
-    <!-- ── Social proof bar ───────────────────────────────── -->
-    <div class="proof-strip mt-8 fade-in">
-      <div class="proof-strip-item">
-        <div class="proof-strip-num">3</div>
-        <div class="proof-strip-label">Businesses Automated</div>
-      </div>
-      <div class="proof-strip-item">
-        <div class="proof-strip-num">100%</div>
-        <div class="proof-strip-label">Call Answer Rate</div>
-      </div>
-      <div class="proof-strip-item">
-        <div class="proof-strip-num">24/7</div>
-        <div class="proof-strip-label">Lead Capture Active</div>
-      </div>
-      <div class="proof-strip-item">
-        <div class="proof-strip-num">€0</div>
-        <div class="proof-strip-label">Missed in Follow-ups</div>
-      </div>
-    </div>
+ <!-- ── Social proof bar ───────────────────────────────── -->
+ <div class="proof-strip mt-8 fade-in">
+ <div class="proof-strip-item">
+ <div class="proof-strip-num">3</div>
+ <div class="proof-strip-label">Businesses Automated</div>
+ </div>
+ <div class="proof-strip-item">
+ <div class="proof-strip-num">100%</div>
+ <div class="proof-strip-label">Call Answer Rate</div>
+ </div>
+ <div class="proof-strip-item">
+ <div class="proof-strip-num">24/7</div>
+ <div class="proof-strip-label">Lead Capture Active</div>
+ </div>
+ <div class="proof-strip-item">
+ <div class="proof-strip-num">€0</div>
+ <div class="proof-strip-label">Missed in Follow-ups</div>
+ </div>
+ </div>
 
-  </div>
+ </div>
 </section>
 
 
 <!-- ============================================================
-     REVENUE CALCULATOR
+ REVENUE CALCULATOR
 ============================================================ -->
 <section id="calculator" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
-  <div class="max-w-3xl mx-auto px-6">
+ <div class="max-w-3xl mx-auto px-6">
 
-    <div class="text-center mb-12 fade-in">
-      <p class="label-badge mb-5">ROI Calculator</p>
-      <h2 class="text-3xl md:text-4xl">How Much Revenue Are You Losing?</h2>
-      <p class="mt-4" style="color: #888880; font-size: 17px; line-height: 1.75;">Find out exactly how much is slipping through the cracks every month.</p>
-    </div>
+ <div class="text-center mb-12 fade-in">
+ <p class="label-badge mb-5">ROI Calculator</p>
+ <h2 class="text-3xl md:text-4xl">How Much Revenue Are You Losing?</h2>
+ <p class="mt-4" style="color: #888880; font-size: 17px; line-height: 1.75;">Find out exactly how much is slipping through the cracks every month.</p>
+ </div>
 
-    <div class="fade-in rounded-2xl p-8 md:p-10 border section-sep" style="background: #ffffff;">
-      <div class="mx-auto" style="max-width: 480px;">
-      <div class="flex flex-col gap-8 mb-8">
-        <div>
-          <label class="block text-sm font-semibold text-heading/80 mb-2" for="avgValue">Avg. Booking Value (€)</label>
-          <input class="calc-input" type="number" id="avgValue" value="150" min="0" />
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-heading/80 mb-2" for="inquiries">Monthly Inquiries / Calls</label>
-          <input class="calc-input" type="number" id="inquiries" value="200" min="0" />
-        </div>
-        <div>
-          <label class="block text-sm font-semibold text-heading/80 mb-2" for="missedRate">Lost / No-Show Rate (%)</label>
-          <input class="calc-input" type="number" id="missedRate" value="20" min="0" max="100" />
-        </div>
-      </div>
+ <div class="fade-in rounded-2xl p-8 md:p-10 border section-sep" style="background: #ffffff;">
+ <div class="mx-auto" style="max-width: 480px;">
+ <div class="flex flex-col gap-8 mb-8">
+ <div>
+ <label class="block text-sm font-semibold text-heading/80 mb-2" for="avgValue">Avg. Booking Value (€)</label>
+ <input class="calc-input" type="number" id="avgValue" value="150" min="0" />
+ </div>
+ <div>
+ <label class="block text-sm font-semibold text-heading/80 mb-2" for="inquiries">Monthly Inquiries / Calls</label>
+ <input class="calc-input" type="number" id="inquiries" value="200" min="0" />
+ </div>
+ <div>
+ <label class="block text-sm font-semibold text-heading/80 mb-2" for="missedRate">Lost / No-Show Rate (%)</label>
+ <input class="calc-input" type="number" id="missedRate" value="20" min="0" max="100" />
+ </div>
+ </div>
 
-      <button onclick="calcRevenue()" class="btn-primary w-full py-4 text-base mb-8">
-        Calculate My Lost Revenue
-      </button>
+ <button onclick="calcRevenue()" class="btn-primary w-full py-4 text-base mb-8">
+ Calculate My Lost Revenue
+ </button>
 
-      <!-- Result -->
-      <div id="calc-result" class="p-6 text-center" style="display:none;">
-        <p class="text-sm text-muted/70 mb-1">You're currently losing approximately</p>
-        <p id="result-value" class="text-5xl font-extrabold mb-1 text-gradient">€0</p>
-        <p class="text-sm text-muted/70">in revenue <span class="font-semibold text-heading">every month</span></p>
-        <p class="text-xs text-muted/50 mt-2 mb-5">That's <span id="result-annual" class="font-semibold text-heading">€0</span>/year left on the table.</p>
-        <a href="#final-cta" class="btn-primary px-8 py-3 text-sm inline-block">Fix This For Me</a>
-      </div>
-      </div><!-- /max-width wrapper -->
-    </div>
+ <!-- Result -->
+ <div id="calc-result" class="p-6 text-center" style="display:none;">
+ <p class="text-sm text-muted/70 mb-1">You're currently losing approximately</p>
+ <p id="result-value" class="text-5xl font-extrabold mb-1 text-gradient">€0</p>
+ <p class="text-sm text-muted/70">in revenue <span class="font-semibold text-heading">every month</span></p>
+ <p class="text-xs text-muted/50 mt-2 mb-5">That's <span id="result-annual" class="font-semibold text-heading">€0</span>/year left on the table.</p>
+ <a href="#final-cta" class="btn-primary px-8 py-3 text-sm inline-block">Fix This For Me</a>
+ </div>
+ </div><!-- /max-width wrapper -->
+ </div>
 
-  </div>
+ </div>
 </section>
 
 
 <!-- ============================================================
-     FINAL CTA
+ FINAL CTA
 ============================================================ -->
 <section id="final-cta" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
-  <div class="px-6 text-center fade-in" style="max-width: 640px; margin: 0 auto;">
-    <p class="label-badge mb-5">Get Started</p>
-    <h2 class="text-3xl md:text-4xl mb-4">
-      Get a Free 1-on-1<br/><span class="text-gradient">Consultation</span> for Your Business
-    </h2>
-    <p class="mb-10" style="color: #888880; font-size: 17px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; margin-bottom: 40px;">
-      See exactly how we generate and qualify leads for your business — personalised to your industry.
-    </p>
+ <div class="px-6 text-center fade-in" style="max-width: 640px; margin: 0 auto;">
+ <p class="label-badge mb-5">Get Started</p>
+ <h2 class="text-3xl md:text-4xl mb-4">
+ Get a Free 1-on-1<br/><span class="text-gradient">Consultation</span> for Your Business
+ </h2>
+ <p class="mb-10" style="color: #888880; font-size: 17px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; margin-bottom: 40px;">
+ See exactly how we generate and qualify leads for your business personalised to your industry.
+ </p>
 
-    <form id="cta-form" onsubmit="handleCTAForm(event)" class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
-      <input type="email" class="email-input flex-1 max-w-sm" placeholder="Enter your work email" required />
-      <button type="submit" class="btn-primary px-8 py-4 text-base whitespace-nowrap">Book Demo</button>
-    </form>
-    <p id="cta-success" class="text-sm text-green-600 hidden">Thanks! We'll reach out within 24 hours.</p>
+ <form id="cta-form" onsubmit="handleCTAForm(event)" class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+ <input type="email" class="email-input flex-1 max-w-sm" placeholder="Enter your work email" required />
+ <button type="submit" class="btn-primary px-8 py-4 text-base whitespace-nowrap">Book Demo</button>
+ </form>
+ <p id="cta-success" class="text-sm text-green-600 hidden">Thanks! We'll reach out within 24 hours.</p>
 
-    <p class="text-xs text-muted/40">No spam. No commitment. Just results.</p>
+ <p class="text-xs text-muted/40">No spam. No commitment. Just results.</p>
 
-    <!-- Calendar embed area -->
-    <div class="mt-12 rounded-2xl overflow-hidden border section-sep" style="background: #ffffff; min-height: 480px;">
-      <iframe
-        src="https://www.cal.eu/cognitvesystems/15min?overlayCalendar=true"
-        frameborder="0"
-        title="Book a Demo"
-        allowfullscreen
-        style="width: 100%; min-height: 700px; border: none; display: block;"
-      ></iframe>
-    </div>
-  </div>
+ <!-- Calendar embed area -->
+ <div class="mt-12 rounded-2xl overflow-hidden border section-sep" style="background: #ffffff; min-height: 480px;">
+ <iframe
+ src="https://www.cal.eu/cognitvesystems/15min?overlayCalendar=true"
+ frameborder="0"
+ title="Book a Demo"
+ allowfullscreen
+ style="width: 100%; min-height: 700px; border: none; display: block;"
+ ></iframe>
+ </div>
+ </div>
 </section>
 
 
 <!-- ============================================================
-     FOOTER
+ FOOTER
 ============================================================ -->
 <footer class="border-t section-sep pt-14 pb-8" style="background: #eceae4;">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+ <div class="max-w-5xl mx-auto px-6">
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
 
-      <!-- Brand -->
-      <div>
-        <div class="flex items-center gap-2.5 mb-3">
-          <img src="logo.png" alt="Drivverk AB" style="height:32px; width:auto;" />
-          <span class="text-lg font-bold text-heading">Drivverk AB</span>
-        </div>
-        <p class="text-sm text-muted/70 leading-relaxed mb-5">AI automation that generates leads, books calls, and grows your business 24/7.</p>
-        <div class="flex gap-4">
-          <a href="https://www.linkedin.com/in/kasper-b%C3%A4ckman-681212218" target="_blank" rel="noopener noreferrer" class="text-muted/40 hover:text-brand transition-colors" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://www.instagram.com/cognitivesystemsab/" target="_blank" rel="noopener noreferrer" class="text-muted/40 hover:text-brand transition-colors" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="#" class="text-muted/40 hover:text-brand transition-colors" aria-label="Twitter">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-          </a>
-        </div>
-      </div>
+ <!-- Brand -->
+ <div>
+ <div class="flex items-center gap-2.5 mb-3">
+ <img src="logo.png" alt="Drivverk AB" style="height:32px; width:auto;" />
+ <span class="text-lg font-bold text-heading">Drivverk AB</span>
+ </div>
+ <p class="text-sm text-muted/70 leading-relaxed mb-5"> automation that generates leads, books calls, and grows your business 24/7.</p>
+ <div class="flex gap-4">
+ <a href="https://www.linkedin.com/in/kasper-b%C3%A4ckman-681212218" target="_blank" rel="noopener noreferrer" class="text-muted/40 hover:text-brand transition-colors" aria-label="LinkedIn">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+ </a>
+ <a href="https://www.instagram.com/cognitivesystemsab/" target="_blank" rel="noopener noreferrer" class="text-muted/40 hover:text-brand transition-colors" aria-label="Instagram">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+ </a>
+ <a href="#" class="text-muted/40 hover:text-brand transition-colors" aria-label="Twitter">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+ </a>
+ </div>
+ </div>
 
-      <!-- Company -->
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-muted/40 mb-4">Company</p>
-        <ul class="space-y-3">
-          <li><a href="about.html" class="text-sm text-muted/60 hover:text-brand transition-colors">About Us</a></li>
-          <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Contact</a></li>
-          <li><a href="privacy.html" class="text-sm text-muted/60 hover:text-brand transition-colors">Privacy Policy</a></li>
-          <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Terms of Service</a></li>
-        </ul>
-      </div>
+ <!-- Company -->
+ <div>
+ <p class="text-xs font-semibold uppercase tracking-widest text-muted/40 mb-4">Company</p>
+ <ul class="space-y-3">
+ <li><a href="about.html" class="text-sm text-muted/60 hover:text-brand transition-colors">About Us</a></li>
+ <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Contact</a></li>
+ <li><a href="privacy.html" class="text-sm text-muted/60 hover:text-brand transition-colors">Privacy Policy</a></li>
+ <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Terms of Service</a></li>
+ </ul>
+ </div>
 
-    </div>
+ </div>
 
-    <div class="border-t section-sep pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
-      <p style="font-size: 13px; color: #888880;">© 2026 Cognitive Systems. All Rights Reserved.</p>
-      <p style="font-size: 13px; color: #888880;">Built by Kasper Bäckman &nbsp;·&nbsp; <a href="privacy.html" style="color: #888880; text-decoration: none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="color: #888880; text-decoration: none;">Terms of Service</a></p>
-    </div>
-  </div>
+ <div class="border-t section-sep pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
+ <p style="font-size: 13px; color: #888880;">© 2026 Cognitive Systems. All Rights Reserved.</p>
+ <p style="font-size: 13px; color: #888880;">Built by Kasper Bäckman &nbsp;·&nbsp; <a href="privacy.html" style="color: #888880; text-decoration: none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="color: #888880; text-decoration: none;">Terms of Service</a></p>
+ </div>
+ </div>
 </footer>
 
 
 <!-- ============================================================
-     EXIT INTENT POPUP
+ EXIT INTENT POPUP
 ============================================================ -->
 <div id="exit-popup" role="dialog" aria-modal="true" aria-label="Exit popup">
-  <div class="popup-panel relative p-8 max-w-md w-full mx-4">
-    <button onclick="closePopup()" class="absolute top-4 right-4 text-muted/40 hover:text-heading transition-colors" aria-label="Close">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+ <div class="popup-panel relative p-8 max-w-md w-full mx-4">
+ <button onclick="closePopup()" class="absolute top-4 right-4 text-muted/40 hover:text-heading transition-colors" aria-label="Close">
+ <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+ </button>
 
-    <div class="text-center">
-      <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5" style="background: #f5f4f0;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
-      </div>
-      <h3 class="text-2xl font-bold text-heading mb-2">Wait — Want a Free Demo?</h3>
-      <p class="text-sm text-muted/70 mb-6">See how we generate and qualify leads for your business — completely free, no commitment.</p>
+ <div class="text-center">
+ <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5" style="background: #f5f4f0;">
+ <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+ </div>
+ <h3 class="text-2xl font-bold text-heading mb-2">Want a Free Demo?</h3>
+ <p class="text-sm text-muted/70 mb-6">See how we generate and qualify leads for your business completely free, no commitment.</p>
 
-      <form onsubmit="handlePopupForm(event)" class="flex flex-col gap-3">
-        <input type="email" class="email-input w-full" placeholder="Enter your email" required />
-        <button type="submit" class="btn-primary w-full py-3.5 text-base">Yes, show me</button>
-      </form>
-      <p id="popup-success" class="text-sm text-green-600 hidden mt-3">We'll be in touch soon!</p>
-      <button onclick="closePopup()" class="mt-3 text-xs text-muted/40 hover:text-muted/60 transition-colors">No thanks, I'll pass</button>
-    </div>
-  </div>
+ <form onsubmit="handlePopupForm(event)" class="flex flex-col gap-3">
+ <input type="email" class="email-input w-full" placeholder="Enter your email" required />
+ <button type="submit" class="btn-primary w-full py-3.5 text-base">Yes, show me</button>
+ </form>
+ <p id="popup-success" class="text-sm text-green-600 hidden mt-3">We'll be in touch soon!</p>
+ <button onclick="closePopup()" class="mt-3 text-xs text-muted/40 hover:text-muted/60 transition-colors">No thanks, I'll pass</button>
+ </div>
+ </div>
 </div>
 
 
 <!-- ============================================================
-     JAVASCRIPT
+ JAVASCRIPT
 ============================================================ -->
 <script>
-  // HEADER — glass on scroll
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
+ // HEADER glass on scroll
+ const header = document.getElementById('header');
+ window.addEventListener('scroll', () => {
+ header.classList.toggle('scrolled', window.scrollY > 50);
+ }, { passive: true });
 
-  // MOBILE MENU
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+ // MOBILE MENU
+ const hamburger = document.getElementById('hamburger');
+ const mobileMenu = document.getElementById('mobile-menu');
+ hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+ function closeMobileMenu() { mobileMenu.classList.remove('open'); }
 
 
-  // FADE-IN ON SCROLL
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const siblings = [...entry.target.parentElement.children]
-          .filter(el => el.classList.contains('fade-in') && !el.classList.contains('visible'));
-        let delay = 0;
-        siblings.forEach(sib => { sib.style.transitionDelay = delay + 'ms'; delay += 90; });
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  fadeEls.forEach(el => observer.observe(el));
+ // FADE-IN ON SCROLL
+ const fadeEls = document.querySelectorAll('.fade-in');
+ const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ const siblings = [...entry.target.parentElement.children]
+.filter(el => el.classList.contains('fade-in') && !el.classList.contains('visible'));
+ let delay = 0;
+ siblings.forEach(sib => { sib.style.transitionDelay = delay + 'ms'; delay += 90; });
+ entry.target.classList.add('visible');
+ observer.unobserve(entry.target);
+ }
+ });
+ }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+ fadeEls.forEach(el => observer.observe(el));
 
-  // REVENUE CALCULATOR
-  function calcRevenue() {
-    const avg      = parseFloat(document.getElementById('avgValue').value)   || 0;
-    const monthly  = parseFloat(document.getElementById('inquiries').value)  || 0;
-    const lostRate = parseFloat(document.getElementById('missedRate').value) || 0;
-    const monthlyLost = avg * monthly * (lostRate / 100);
-    const annualLost  = monthlyLost * 12;
-    const fmt = n => '€' + Math.round(n).toLocaleString('de-DE');
-    document.getElementById('result-value').textContent  = fmt(monthlyLost);
-    document.getElementById('result-annual').textContent = fmt(annualLost);
-    const result = document.getElementById('calc-result');
-    result.style.display = 'block';
-    result.style.opacity = '0';
-    result.style.transform = 'translateY(12px)';
-    requestAnimationFrame(() => {
-      result.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      result.style.opacity = '1';
-      result.style.transform = 'none';
-    });
-    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-  ['avgValue','inquiries','missedRate'].forEach(id => {
-    document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') calcRevenue(); });
-  });
+ // REVENUE CALCULATOR
+ function calcRevenue() {
+ const avg = parseFloat(document.getElementById('avgValue').value) || 0;
+ const monthly = parseFloat(document.getElementById('inquiries').value) || 0;
+ const lostRate = parseFloat(document.getElementById('missedRate').value) || 0;
+ const monthlyLost = avg * monthly * (lostRate / 100);
+ const annualLost = monthlyLost * 12;
+ const fmt = n => '€' + Math.round(n).toLocaleString('de-DE');
+ document.getElementById('result-value').textContent = fmt(monthlyLost);
+ document.getElementById('result-annual').textContent = fmt(annualLost);
+ const result = document.getElementById('calc-result');
+ result.style.display = 'block';
+ result.style.opacity = '0';
+ result.style.transform = 'translateY(12px)';
+ requestAnimationFrame(() => {
+ result.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+ result.style.opacity = '1';
+ result.style.transform = 'none';
+ });
+ result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+ }
+ ['avgValue','inquiries','missedRate'].forEach(id => {
+ document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') calcRevenue(); });
+ });
 
-  // CTA FORMS
-  function handleCTAForm(e) {
-    e.preventDefault();
-    document.getElementById('cta-form').style.display = 'none';
-    document.getElementById('cta-success').classList.remove('hidden');
-  }
-  function handleDemoForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    setTimeout(() => {
-      e.target.style.display = 'none';
-      document.getElementById('demo-form-success').classList.remove('hidden');
-    }, 800);
-  }
+ // CTA FORMS
+ function handleCTAForm(e) {
+ e.preventDefault();
+ document.getElementById('cta-form').style.display = 'none';
+ document.getElementById('cta-success').classList.remove('hidden');
+ }
+ function handleDemoForm(e) {
+ e.preventDefault();
+ const btn = e.target.querySelector('button');
+ btn.textContent = 'Sending...';
+ btn.disabled = true;
+ setTimeout(() => {
+ e.target.style.display = 'none';
+ document.getElementById('demo-form-success').classList.remove('hidden');
+ }, 800);
+ }
 
-  // EXIT INTENT POPUP
-  let popupShown = false;
-  function showPopup() {
-    if (!popupShown) { document.getElementById('exit-popup').classList.add('active'); popupShown = true; }
-  }
-  function closePopup() { document.getElementById('exit-popup').classList.remove('active'); }
-  function handlePopupForm(e) {
-    e.preventDefault();
-    document.getElementById('popup-success').classList.remove('hidden');
-    setTimeout(closePopup, 2000);
-  }
-  document.addEventListener('mouseleave', e => { if (e.clientY <= 0) showPopup(); });
-  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') showPopup(); });
-  setTimeout(showPopup, 45000);
-  document.getElementById('exit-popup').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closePopup();
-  });
+ // EXIT INTENT POPUP
+ let popupShown = false;
+ function showPopup() {
+ if (!popupShown) { document.getElementById('exit-popup').classList.add('active'); popupShown = true; }
+ }
+ function closePopup() { document.getElementById('exit-popup').classList.remove('active'); }
+ function handlePopupForm(e) {
+ e.preventDefault();
+ document.getElementById('popup-success').classList.remove('hidden');
+ setTimeout(closePopup, 2000);
+ }
+ document.addEventListener('mouseleave', e => { if (e.clientY <= 0) showPopup(); });
+ document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') showPopup(); });
+ setTimeout(showPopup, 45000);
+ document.getElementById('exit-popup').addEventListener('click', e => {
+ if (e.target === e.currentTarget) closePopup();
+ });
 </script>
 
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69d24db20515dd5382020606"></script>
