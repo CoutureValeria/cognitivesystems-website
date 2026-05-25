@@ -677,12 +677,14 @@
  <p class="label-badge mb-4">Still Not Sure?</p>
  <h3 class="text-xl font-bold mb-2" style="color: #1a1a1a;">Have a question? I'll reply within 24 hours.</h3>
  <p class="mb-6 text-sm" style="color: #888880; line-height: 1.75;">Drop your company name and question below and I'll personally get back to you.</p>
- <form id="question-form" onsubmit="handleQuestionForm(event)" class="flex flex-col gap-4">
- <input type="text" id="q-company" class="email-input w-full" placeholder="Your company name" required style="text-align:left;" />
- <textarea id="q-message" class="email-input w-full" placeholder="What's your question?" required rows="4" style="text-align:left; resize:vertical; padding:14px 18px; line-height:1.6;"></textarea>
+ <form action="https://formsubmit.co/cas@casautomations.com" method="POST" class="flex flex-col gap-4">
+ <input type="hidden" name="_subject" value="New question from website" />
+ <input type="hidden" name="_captcha" value="false" />
+ <input type="hidden" name="_next" value="https://drivverk.se/#final-cta" />
+ <input type="text" name="company" class="email-input w-full" placeholder="Your company name" required style="text-align:left;" />
+ <textarea name="question" class="email-input w-full" placeholder="What's your question?" required rows="4" style="text-align:left; resize:vertical; padding:14px 18px; line-height:1.6;"></textarea>
  <button type="submit" class="btn-primary px-8 py-4 text-base self-start">Send My Question</button>
  </form>
- <p id="question-success" class="text-sm text-green-600 hidden mt-4">Got it. I'll reply within 24 hours.</p>
  </div>
 
  <!-- Calendar embed area -->
@@ -867,12 +869,7 @@
  if (e.target === e.currentTarget) closePopup();
  });
 
- // QUESTION FORM
- function handleQuestionForm(e) {
- e.preventDefault();
- document.getElementById('question-form').style.display = 'none';
- document.getElementById('question-success').classList.remove('hidden');
- }
+
 </script>
 
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69d24db20515dd5382020606"></script>
