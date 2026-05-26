@@ -151,21 +151,6 @@
 .play-btn { width: 68px; height: 68px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; transition: background 0.2s ease; }
 .video-placeholder:hover.play-btn { background: #333; }
 
- /* ── STICKY BAR ──────────────────────────────────────────── */
- #sticky-bar {
-   position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-   background: #1a1a1a; color: #ffffff;
-   padding: 14px 24px;
-   display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
-   transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
-   border-top: 1px solid #333;
- }
- #sticky-bar.visible { transform: translateY(0); }
- #sticky-bar p { font-size: 0.875rem; color: rgba(255,255,255,0.8); margin: 0; }
- #sticky-bar .bar-btn { background: #ffffff; color: #1a1a1a; font-weight: 700; font-size: 0.8rem; border-radius: 6px; padding: 8px 18px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
- #sticky-bar .bar-btn:hover { background: #e8e6e0; }
- #sticky-bar .bar-close { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; line-height: 1; transition: color 0.2s; margin-left: 8px; }
- #sticky-bar .bar-close:hover { color: #ffffff; }
 
  /* ── MISC ────────────────────────────────────────────────── */
  #mobile-menu { display: none; }
@@ -222,8 +207,6 @@
    /* Buttons full-width on mobile */
    .btn-primary.px-8, .btn-outline.px-8 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 
-   /* Sticky bar: stack on very small */
-   #sticky-bar { flex-direction: column; gap: 10px; padding: 14px 16px; text-align: center; }
  }
  </style>
 </head>
@@ -809,16 +792,6 @@
 </footer>
 
 
-<!-- ============================================================
- STICKY BOTTOM BAR
-============================================================ -->
-<div id="sticky-bar" role="complementary">
- <p>Not ready to book? See how it works first.</p>
- <a href="#demo" class="bar-btn" onclick="dismissBar()">Watch the Demo</a>
- <button class="bar-close" onclick="dismissBar()" aria-label="Dismiss">
- <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
- </button>
-</div>
 
 
 <!-- ============================================================
@@ -891,13 +864,6 @@
  }, 800);
  }
 
- // STICKY BOTTOM BAR
- let barShown = false;
- function showBar() {
-   if (!barShown) { document.getElementById('sticky-bar').classList.add('visible'); barShown = true; }
- }
- function dismissBar() { document.getElementById('sticky-bar').classList.remove('visible'); }
- setTimeout(showBar, 30000);
 
 
 </script>
