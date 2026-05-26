@@ -184,7 +184,47 @@
  nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: #1a1a1a; transition: width 0.25s ease; }
  nav a:hover::after { width: 100%; }
 
- @media (max-width: 768px) {.step-line::after { display: none; } }
+ @media (max-width: 768px) { .step-line::after { display: none; } }
+
+ /* ── MOBILE ──────────────────────────────────────────────── */
+ @media (max-width: 640px) {
+   /* Breathable section padding */
+   section { padding-top: 60px !important; padding-bottom: 60px !important; }
+
+   /* Hero: don't force full-screen height, reduce top pad */
+   section.hero { min-height: auto !important; padding-top: 88px !important; padding-bottom: 40px !important; }
+
+   /* Headline: smaller minimum */
+   h1 { font-size: clamp(1.85rem, 8vw, 2.4rem) !important; }
+
+   /* Subtext: tighter */
+   p[style*="font-size: 17px"] { font-size: 15px !important; }
+
+   /* Nav logo: shrink */
+   #header img { height: 32px !important; }
+   #header .max-w-6xl { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+   /* Cards: less inner padding on mobile */
+   .case-card { padding: 1.25rem !important; }
+   .dark-product-card { padding: 1.25rem !important; }
+
+   /* Case stats: tighter */
+   .case-stats { gap: 1.25rem !important; }
+   .case-stat-num { font-size: 1.5rem !important; }
+
+   /* Proof strip */
+   .proof-strip { padding: 1rem !important; }
+   .proof-strip-num { font-size: 1.25rem !important; }
+
+   /* CTA cards */
+   .rounded-2xl.p-8 { padding: 1.5rem !important; }
+
+   /* Buttons full-width on mobile */
+   .btn-primary.px-8, .btn-outline.px-8 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+   /* Sticky bar: stack on very small */
+   #sticky-bar { flex-direction: column; gap: 10px; padding: 14px 16px; text-align: center; }
+ }
  </style>
 </head>
 <body>
@@ -235,7 +275,7 @@
 <!-- ============================================================
  HERO SECTION
 ============================================================ -->
-<section class="relative min-h-screen flex items-center pt-36 pb-28" style="background: #f5f4f0; border-bottom: 1px solid #e8e6e0;">
+<section class="hero relative min-h-screen flex items-center pt-36 pb-28" style="background: #f5f4f0; border-bottom: 1px solid #e8e6e0;">
  <div class="absolute inset-0 pointer-events-none"></div>
 
  <div class="max-w-6xl mx-auto px-6 w-full relative z-10">
