@@ -139,6 +139,7 @@
 .email-input { padding: 14px 18px; }
 .calc-input:focus,.email-input:focus { outline: none; border-color: #1a1a1a; }
 .calc-input::placeholder,.email-input::placeholder { color: #888880; }
+ #pink-cow-form textarea::placeholder { color: #b0aea8; font-style: italic; }
 
  /* ── VIDEO ───────────────────────────────────────────────── */
 .video-placeholder {
@@ -313,6 +314,38 @@
 
 
 <!-- ============================================================
+ PRODUCTS
+============================================================ -->
+<section id="products" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
+ <div class="px-6 text-center fade-in" style="max-width: 600px; margin: 0 auto;">
+ <h2 class="text-3xl md:text-4xl mb-5" style="color: #1a1a1a; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">What's the most expensive task your team does on repeat?</h2>
+ <p class="mb-10" style="color: #888880; font-size: 17px; line-height: 1.75;">We automate it. Describe it in one line and leave your email or phone number. We'll come back with a solution within 24 hours.</p>
+ <form id="pink-cow-form" class="flex flex-col gap-4 text-left" onsubmit="handlePinkCow(event)">
+ <textarea
+ name="task"
+ maxlength="300"
+ rows="3"
+ class="email-input w-full"
+ placeholder="e.g. We manually call every new inquiry to qualify them before booking — takes 2 hours a day"
+ required
+ style="text-align:left; resize:vertical; padding:14px 18px; line-height:1.6; font-style:italic;"
+ ></textarea>
+ <input
+ type="text"
+ name="contact"
+ class="email-input w-full"
+ placeholder="Email or phone number"
+ required
+ style="text-align:left;"
+ />
+ <button type="submit" class="btn-primary px-8 py-4 text-base self-center">Send</button>
+ </form>
+ <p id="pink-cow-success" style="display:none; margin-top:1.5rem; font-size:15px; color:#888880;">Got it. We'll be in touch within 24 hours.</p>
+ </div>
+</section>
+
+
+<!-- ============================================================
  LIVE TEST
 ============================================================ -->
 <section id="demo" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
@@ -357,19 +390,6 @@
 
  </div>
 
- </div>
-</section>
-
-
-<!-- ============================================================
- PRODUCTS
-============================================================ -->
-<section id="products" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
- <div class="px-6 text-center fade-in" style="max-width: 640px; margin: 0 auto;">
- <h2 class="text-3xl md:text-4xl mb-6" style="color: #1a1a1a; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em;">What's the most expensive task your team does on repeat?</h2>
- <p class="mb-3" style="color: #888880; font-size: 17px; line-height: 1.75;">Think about it for a second.</p>
- <p class="mb-10" style="color: #888880; font-size: 17px; line-height: 1.75;">We automate it. Tell us what it is — we'll come back with a solution within 24 hours.</p>
- <a href="#final-cta" class="btn-primary px-8 py-4 text-base">Book a Demo →</a>
  </div>
 </section>
 
@@ -712,7 +732,26 @@
  document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') calcRevenue(); });
  });
 
-
+ // PINK COW FORM
+ async function handlePinkCow(e) {
+ e.preventDefault();
+ const form = e.target;
+ const btn = form.querySelector('button[type="submit"]');
+ btn.textContent = 'Sending...';
+ btn.disabled = true;
+ const data = new FormData(form);
+ data.append('_subject', 'New automation task from website');
+ data.append('_captcha', 'false');
+ try {
+ await fetch('https://formsubmit.co/ajax/cas@casautomations.com', {
+ method: 'POST',
+ headers: { 'Accept': 'application/json' },
+ body: data,
+ });
+ } catch (_) {}
+ form.style.display = 'none';
+ document.getElementById('pink-cow-success').style.display = 'block';
+ }
 
 </script>
 
