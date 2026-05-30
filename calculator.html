@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>ROI Calculator – Drivverk AB</title>
+ <meta name="description" content="Find out how much revenue you're losing every month to missed calls and no-shows." />
+ <link rel="icon" type="image/png" href="logo.png" />
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ brand: '#1a1a1a', dark: '#1a1a1a', panel: '#f5f4f0',
+ card: '#ffffff', muted: '#3a3a3a', heading: '#1a1a1a',
+ },
+ fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+ },
+ },
+ };
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+ <style>
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+ body { font-family: 'Inter', system-ui, sans-serif; background: #f5f4f0; color: #3a3a3a; font-size: 15px; line-height: 1.75; }
+ h1, h2, h3 { color: #1a1a1a; font-weight: 700; line-height: 1.2; }
+
+ .nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 50; background: rgba(245,244,240,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid #e8e6e0; height: 60px; display: flex; align-items: center; padding: 0 32px; justify-content: space-between; }
+ .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; color: #1a1a1a; }
+ .nav-logo img { height: 30px; width: auto; }
+ .nav-back { font-size: 0.85rem; color: #888880; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.15s; }
+ .nav-back:hover { color: #1a1a1a; }
+
+ .page-header { padding: 100px 32px 48px; background: #f5f4f0; border-bottom: 1px solid #e8e6e0; text-align: center; }
+ .page-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #888880; margin-bottom: 12px; }
+ .page-header h1 { font-size: 2.4rem; font-weight: 800; color: #1a1a1a; letter-spacing: -0.02em; margin-bottom: 10px; }
+ .page-header p { font-size: 1rem; color: #888880; line-height: 1.75; max-width: 480px; margin: 0 auto; }
+
+ .content-wrap { max-width: 640px; margin: 0 auto; padding: 64px 32px 100px; }
+
+ .btn-primary { background: #1a1a1a; color: #ffffff; font-weight: 700; border-radius: 8px; letter-spacing: 0.01em; font-size: 0.875rem; border: none; transition: background 0.2s ease; display: inline-block; text-decoration: none; cursor: pointer; }
+ .btn-primary:hover { background: #333333; }
+
+ .label-badge { background: #ffffff; border: 1px solid #e8e6e0; color: #888880; border-radius: 999px; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; display: inline-block; }
+
+ .calc-input { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 8px; color: #1a1a1a; font-size: 15px; transition: border-color 0.2s; padding: 13px 16px; width: 100%; font-family: inherit; }
+ .calc-input:focus { outline: none; border-color: #1a1a1a; }
+ .calc-input::placeholder { color: #888880; }
+
+ #calc-result { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 14px; }
+ .text-gradient { color: #1a1a1a; }
+
+ footer { border-top: 1px solid #e8e6e0; background: #eceae4; padding: 28px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+ footer a { font-size: 0.8rem; color: #888880; text-decoration: none; transition: color 0.15s; }
+ footer a:hover { color: #1a1a1a; }
+ footer p { font-size: 0.8rem; color: #888880; }
+
+ @media (max-width: 640px) {
+ .page-header h1 { font-size: 1.8rem; }
+ .content-wrap { padding: 48px 20px 80px; }
+ }
+ </style>
+</head>
+<body>
+
+<nav class="nav">
+ <a href="index.html" class="nav-logo">
+ <img src="logo.png" alt="Drivverk AB" style="mix-blend-mode: multiply;" />
+ Drivverk AB
+ </a>
+ <a href="index.html" class="nav-back">
+ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+ Back home
+ </a>
+</nav>
+
+<div class="page-header">
+ <p class="page-label">ROI Calculator</p>
+ <h1>How Much Revenue Are You Losing?</h1>
+ <p>Find out exactly how much is slipping through the cracks every month.</p>
+</div>
+
+<div class="content-wrap">
+ <div class="rounded-2xl border" style="background: #ffffff; border-color: #e8e6e0; padding: 2.5rem;">
+ <div style="max-width: 480px; margin: 0 auto;">
+ <div style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 2rem;">
+ <div>
+ <label style="display: block; font-size: 0.875rem; font-weight: 600; color: #1a1a1a; margin-bottom: 8px;" for="avgValue">Avg. Booking Value (€)</label>
+ <input class="calc-input" type="number" id="avgValue" value="150" min="0" />
+ </div>
+ <div>
+ <label style="display: block; font-size: 0.875rem; font-weight: 600; color: #1a1a1a; margin-bottom: 8px;" for="inquiries">Monthly Inquiries / Calls</label>
+ <input class="calc-input" type="number" id="inquiries" value="200" min="0" />
+ </div>
+ <div>
+ <label style="display: block; font-size: 0.875rem; font-weight: 600; color: #1a1a1a; margin-bottom: 8px;" for="missedRate">Lost / No-Show Rate (%)</label>
+ <input class="calc-input" type="number" id="missedRate" value="20" min="0" max="100" />
+ </div>
+ </div>
+
+ <button onclick="calcRevenue()" class="btn-primary w-full py-4 text-base mb-8" style="width: 100%; padding: 1rem; font-size: 1rem; margin-bottom: 2rem;">
+ Calculate My Lost Revenue
+ </button>
+
+ <div id="calc-result" class="p-6 text-center" style="display:none;">
+ <p style="font-size: 0.875rem; color: #888880; margin-bottom: 4px;">You're currently losing approximately</p>
+ <p id="result-value" style="font-size: 3rem; font-weight: 800; color: #1a1a1a; line-height: 1.1; margin-bottom: 4px;">€0</p>
+ <p style="font-size: 0.875rem; color: #888880;">in revenue <strong style="color: #1a1a1a;">every month</strong></p>
+ <p style="font-size: 0.75rem; color: #888880; margin-top: 8px; margin-bottom: 20px;">That's <span id="result-annual" style="font-weight: 600; color: #1a1a1a;">€0</span>/year left on the table.</p>
+ <a href="index.html#final-cta" class="btn-primary" style="padding: 0.75rem 2rem; font-size: 0.875rem;">Fix This For Me</a>
+ </div>
+ </div>
+ </div>
+</div>
+
+<footer>
+ <a href="index.html" style="font-weight:700; color:#1a1a1a; font-size:0.9rem;">Drivverk AB</a>
+ <div style="display:flex; gap:20px;">
+ <a href="about.html">About</a>
+ <a href="privacy.html">Privacy Policy</a>
+ <a href="index.html#final-cta">Contact</a>
+ </div>
+ <p>© 2026 Drivverk AB. All Rights Reserved.</p>
+</footer>
+
+<script>
+ function calcRevenue() {
+ const avg = parseFloat(document.getElementById('avgValue').value) || 0;
+ const monthly = parseFloat(document.getElementById('inquiries').value) || 0;
+ const lostRate = parseFloat(document.getElementById('missedRate').value) || 0;
+ const monthlyLost = avg * monthly * (lostRate / 100);
+ const annualLost = monthlyLost * 12;
+ const fmt = n => '€' + Math.round(n).toLocaleString('de-DE');
+ document.getElementById('result-value').textContent = fmt(monthlyLost);
+ document.getElementById('result-annual').textContent = fmt(annualLost);
+ const result = document.getElementById('calc-result');
+ result.style.display = 'block';
+ result.style.opacity = '0';
+ result.style.transform = 'translateY(12px)';
+ requestAnimationFrame(() => {
+ result.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+ result.style.opacity = '1';
+ result.style.transform = 'none';
+ });
+ result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+ }
+ ['avgValue','inquiries','missedRate'].forEach(id => {
+ document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') calcRevenue(); });
+ });
+</script>
+
+</body>
+</html>

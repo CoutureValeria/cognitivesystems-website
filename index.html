@@ -505,53 +505,6 @@
 </section>
 
 
-<!-- ============================================================
- REVENUE CALCULATOR
-============================================================ -->
-<section id="calculator" style="background: #f5f4f0; border-top: 1px solid #e8e6e0; padding: 120px 0;">
- <div class="max-w-3xl mx-auto px-6">
-
- <div class="text-center mb-12 fade-in">
- <p class="label-badge mb-5">ROI Calculator</p>
- <h2 class="text-3xl md:text-4xl">How Much Revenue Are You Losing?</h2>
- <p class="mt-4" style="color: #888880; font-size: 17px; line-height: 1.75;">Find out exactly how much is slipping through the cracks every month.</p>
- </div>
-
- <div class="fade-in rounded-2xl p-8 md:p-10 border section-sep" style="background: #ffffff;">
- <div class="mx-auto" style="max-width: 480px;">
- <div class="flex flex-col gap-8 mb-8">
- <div>
- <label class="block text-sm font-semibold text-heading/80 mb-2" for="avgValue">Avg. Booking Value (€)</label>
- <input class="calc-input" type="number" id="avgValue" value="150" min="0" />
- </div>
- <div>
- <label class="block text-sm font-semibold text-heading/80 mb-2" for="inquiries">Monthly Inquiries / Calls</label>
- <input class="calc-input" type="number" id="inquiries" value="200" min="0" />
- </div>
- <div>
- <label class="block text-sm font-semibold text-heading/80 mb-2" for="missedRate">Lost / No-Show Rate (%)</label>
- <input class="calc-input" type="number" id="missedRate" value="20" min="0" max="100" />
- </div>
- </div>
-
- <button onclick="calcRevenue()" class="btn-primary w-full py-4 text-base mb-8">
- Calculate My Lost Revenue
- </button>
-
- <!-- Result -->
- <div id="calc-result" class="p-6 text-center" style="display:none;">
- <p class="text-sm text-muted/70 mb-1">You're currently losing approximately</p>
- <p id="result-value" class="text-5xl font-extrabold mb-1 text-gradient">€0</p>
- <p class="text-sm text-muted/70">in revenue <span class="font-semibold text-heading">every month</span></p>
- <p class="text-xs text-muted/50 mt-2 mb-5">That's <span id="result-annual" class="font-semibold text-heading">€0</span>/year left on the table.</p>
- <a href="#final-cta" class="btn-primary px-8 py-3 text-sm inline-block">Fix This For Me</a>
- </div>
- </div><!-- /max-width wrapper -->
- </div>
-
- </div>
-</section>
-
 
 <!-- ============================================================
  FINAL CTA
@@ -639,6 +592,7 @@
  <p class="text-xs font-semibold uppercase tracking-widest text-muted/40 mb-4">Company</p>
  <ul class="space-y-3">
  <li><a href="about.html" class="text-sm text-muted/60 hover:text-brand transition-colors">About Us</a></li>
+ <li><a href="calculator.html" class="text-sm text-muted/60 hover:text-brand transition-colors">ROI Calculator</a></li>
  <li><a href="#final-cta" class="text-sm text-muted/60 hover:text-brand transition-colors">Contact</a></li>
  <li><a href="privacy.html" class="text-sm text-muted/60 hover:text-brand transition-colors">Privacy Policy</a></li>
  <li><a href="#" class="text-sm text-muted/60 hover:text-brand transition-colors">Terms of Service</a></li>
@@ -690,30 +644,6 @@
  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
  fadeEls.forEach(el => observer.observe(el));
 
- // REVENUE CALCULATOR
- function calcRevenue() {
- const avg = parseFloat(document.getElementById('avgValue').value) || 0;
- const monthly = parseFloat(document.getElementById('inquiries').value) || 0;
- const lostRate = parseFloat(document.getElementById('missedRate').value) || 0;
- const monthlyLost = avg * monthly * (lostRate / 100);
- const annualLost = monthlyLost * 12;
- const fmt = n => '€' + Math.round(n).toLocaleString('de-DE');
- document.getElementById('result-value').textContent = fmt(monthlyLost);
- document.getElementById('result-annual').textContent = fmt(annualLost);
- const result = document.getElementById('calc-result');
- result.style.display = 'block';
- result.style.opacity = '0';
- result.style.transform = 'translateY(12px)';
- requestAnimationFrame(() => {
- result.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
- result.style.opacity = '1';
- result.style.transform = 'none';
- });
- result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
- }
- ['avgValue','inquiries','missedRate'].forEach(id => {
- document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') calcRevenue(); });
- });
 
  // PINK COW FORM
  async function handlePinkCow(e) {
