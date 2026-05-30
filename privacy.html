@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8" />
@@ -349,5 +349,33 @@
  <p>© 2026 Drivverk AB. All Rights Reserved.</p>
 </footer>
 
-</body>
+
+<!-- â”€â”€ COOKIE BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+<div id="cookie-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.35); z-index:9999; display:flex; align-items:center; justify-content:center; padding:1.5rem;">
+  <div style="background:#ffffff; border:1px solid #e8e6e0; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.10); max-width:480px; width:100%; padding:2rem 2rem 1.75rem; font-family:'Inter',system-ui,sans-serif;">
+    <h2 style="font-size:1.2rem; font-weight:800; color:#1a1a1a; margin-bottom:0.75rem; line-height:1.2;">We care about your privacy</h2>
+    <p style="font-size:0.875rem; color:#3a3a3a; line-height:1.7; margin-bottom:0.75rem;">We use <strong style="color:#1a1a1a;">essential</strong> cookies for site functionality and <strong style="color:#1a1a1a;">optional</strong> analytics cookies to understand how you use our site.</p>
+    <p style="font-size:0.875rem; color:#3a3a3a; line-height:1.7; margin-bottom:1rem;">For more information, read our <a href="privacy.html" style="color:#1a1a1a; text-decoration:underline; text-underline-offset:2px;">privacy policy</a>.</p>
+    <ul style="list-style:none; padding:0; margin-bottom:1.25rem; display:flex; flex-direction:column; gap:0.4rem;">
+      <li style="font-size:0.8rem; color:#3a3a3a;"><strong style="color:#1a1a1a;">Essential cookies:</strong> site function, language (always active)</li>
+      <li style="font-size:0.8rem; color:#3a3a3a;"><strong style="color:#1a1a1a;">Optional cookies:</strong> Google Analytics (requires consent)</li>
+    </ul>
+    <p style="font-size:0.75rem; color:#888880; margin-bottom:1.5rem;"><strong style="color:#3a3a3a;">Legal basis:</strong> optional cookies are only loaded after your explicit consent.</p>
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+      <button onclick="cookieChoice(false)" style="flex:1; min-width:140px; padding:0.75rem 1rem; background:transparent; border:1px solid #c8c6c0; border-radius:8px; font-size:0.875rem; font-weight:700; color:#1a1a1a; cursor:pointer; font-family:inherit;" onmouseover="this.style.borderColor='#1a1a1a'" onmouseout="this.style.borderColor='#c8c6c0'">Essential only</button>
+      <button onclick="cookieChoice(true)" style="flex:1; min-width:140px; padding:0.75rem 1rem; background:#1a1a1a; border:1px solid #1a1a1a; border-radius:8px; font-size:0.875rem; font-weight:700; color:#ffffff; cursor:pointer; font-family:inherit;" onmouseover="this.style.background='#333333'" onmouseout="this.style.background='#1a1a1a'">Accept all</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    if (!localStorage.getItem('cookie_consent')) {
+      document.getElementById('cookie-overlay').style.display = 'flex';
+    }
+  })();
+  function cookieChoice(all) {
+    localStorage.setItem('cookie_consent', all ? 'all' : 'essential');
+    document.getElementById('cookie-overlay').style.display = 'none';
+  }
+</script></body>
 </html>
